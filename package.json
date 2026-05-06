@@ -1,0 +1,13 @@
+{
+  "name": "onlykey-docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OnlyKey documentation, migrated to docmd",
+  "scripts": {
+    "dev": "docmd dev",
+    "build": "docmd build"
+  },
+  "dependencies": {
+    "@docmd/core": "*"
+  }
+}
