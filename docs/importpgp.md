@@ -59,7 +59,7 @@ Only generate keys on a computer that you trust (i.e. never a publicly accessibl
 :::
 
 :::tip
-Prefer a how-to video? Watch one [here](https://vimeo.com/374512727)<br>[![How-To: Generate and load a new OpenPGP key on OnlyKey](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/pgp.png)](https://vimeo.com/374512727)
+Prefer a how-to video? Watch one [here](https://vimeo.com/374512727)<br>[![How-To: Generate and load a new OpenPGP key on OnlyKey](/assets/pgp.png)](https://vimeo.com/374512727)
 :::
 
 :::callout
@@ -70,49 +70,49 @@ Prefer a how-to video? Watch one [here](https://vimeo.com/374512727)<br>[![How-T
 **Step 2.** Select Login
 :::
 
-![](images/keybase1.jpeg)
+![](/assets/keybase1.jpeg)
 
 :::callout
 **Step 3.** Select Join Keybase
 :::
 
-![](images/keybase2.jpeg)
+![](/assets/keybase2.jpeg)
 
 :::callout
 **Step 4.** Enter an email address, username, and passphrase. This username will be used by others who want to send you encrypted messages. When finished select join.
 :::
 
-![](images/keybase11.jpeg)
+![](/assets/keybase11.jpeg)
 
 :::callout
 **Step 5.** Select add a PGP key
 :::
 
-![](images/keybase3.jpeg)
+![](/assets/keybase3.jpeg)
 
 :::callout
 **Step 6.** Select I need a public key
 :::
 
-![](images/keybase4.jpeg)
+![](/assets/keybase4.jpeg)
 
 :::callout
 **Step 7.** Select Ok, got it
 :::
 
-![](images/keybase5.jpeg)
+![](/assets/keybase5.jpeg)
 
 :::callout
 **Step 8.** Enter Full name and at least one email. These will appear on the messages you send. When finished select Let the math begin.
 :::
 
-![](images/keybase6.jpeg)
+![](/assets/keybase6.jpeg)
 
 :::callout
 **Step 9.** After the key is generated make sure to uncheck Host encrypted private key, too. Best security practices are to only keep your private key offline.
 :::
 
-![](images/keybase7.jpeg)
+![](/assets/keybase7.jpeg)
 
 :::callout
 **Step 10.** Highlight your private key and copy to a text file. Save this to removable media like a USB flash drive or CD/DVD. You may want to make multiple copies as there is no way to recover this key if you lose it. Also ensure you write down your key passphrase (Same as Keybase account password) this is required to unlock your key. Store both in a physically secure location.
@@ -122,9 +122,9 @@ Prefer a how-to video? Watch one [here](https://vimeo.com/374512727)<br>[![How-T
 A great physically secure location is a safe, preferably a fire safe.
 :::
 
-![](images/keybase8.jpeg)
+![](/assets/keybase8.jpeg)
 
-![](images/keybase9.jpeg)
+![](/assets/keybase9.jpeg)
 
 :::callout
 **Step 11.** Select Done, post to Keybase.
@@ -254,7 +254,7 @@ Only load keys on a computer that you trust (i.e. never a publicly accessible or
 **Step 4.** Paste the copied private key into the OpenPGP Private Key (PEM Format) box. Ensure *Auto Load* is selected as Slot, enter the same passphrase you used with Keybase, Protonmail, or GPG. When finished select Save to OnlyKey
 :::
 
-![](images/loadkey1.png)
+![](/assets/loadkey1.png)
 
 :::note
 Selecting set as backup key will use your Keybase key to encrypt backups. Setting this will override any previously set backup passphrase/key as there can only be one backup key set.

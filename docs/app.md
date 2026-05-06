@@ -73,22 +73,22 @@ The Chrome app has limited features and should only be used where the desktop ap
 **Step 2.** Click [here](https://chrome.google.com/webstore/detail/onlykey-configuration/adafilbceehejjehoccladhbkgbjmica) to browse to the OnlyKey Configuration Web app on the Chrome Web Store and select 'Add to Chrome'
 :::
 
-![](images/image41.png)
+![](/assets/image41.png)
 
 :::callout
 **Step 3.** When prompted select ''Add App''
 :::
 
-![](images/image12.png)
+![](/assets/image12.png)
 
 :::callout
 **Step 4.** To launch the OnlyKey Configuration App select the top right menu icon -> Bookmarks -> Show Bookmarks Bar to enable the bookmarks bar to become visible. Then select the Apps icon (Or alternatively browse to ''chrome://apps/'') and then select the ''OK'' icon to launch the OnlyKey App.
 :::
 
-![](images/image33.png)
+![](/assets/image33.png)
 <br>
 <br>
-![](images/image17.png)
+![](/assets/image17.png)
 <br>
 <br>
 

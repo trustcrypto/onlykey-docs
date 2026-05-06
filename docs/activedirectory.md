@@ -41,7 +41,7 @@ To deploy security keys on Azure AD some configuration is required:
 
 2) Once the target user group has been created go to Azure AD Security settings -> Authentication methods and create an Authentication method policy
 
-![Azure AD Authentication methods](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/authentication.png)
+![Azure AD Authentication methods](/assets/authentication.png)
 
 3) Select "Add AAGUID" under "Restrict specific keys" and add OnlyKey's AAGUID `998f358b-2dd2-4cbe-a43a-e8107438dfb3`
 

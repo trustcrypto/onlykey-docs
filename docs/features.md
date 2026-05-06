@@ -10,10 +10,10 @@ keywords: OnlyKey, Features
 OnlyKey comes in two models:
 
 OnlyKey - Features 6 physical buttons, USB-A interface, and multiple color cases
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/Infographic.png)
+![](/assets/Infographic.png)
 
 OnlyKey DUO - Features 3 physical buttons, both USB-C & USB-A interface, and small form factor
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/infographic-duo.jpg)
+![](/assets/infographic-duo.jpg)
 
 ### UNIVERSAL SUPPORT
 Supports Windows, Mac OS, Android, Linux, and Chrome OS. Driverless operation – Recognized by computer as a regular keyboard.
@@ -21,7 +21,7 @@ Supports Windows, Mac OS, Android, Linux, and Chrome OS. Driverless operation �
 ### PORTABLE. DURABLE. WATERPROOF
 On-the-go – Easily attach and detach the OnlyKey to your keychain and bring it everywhere you go.
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/package.jpg)
+![](/assets/package.jpg)
 
 ### PIN PROTECTED
 For OnlyKey your PIN code must be typed onto the 6 button keypad of the OnlyKey in order to unlock. For OnlyKey DUO you can use the OnlyKey App to unlock. If you lose OnlyKey no problem, it is PIN protected and can’t be used without the PIN, enter the wrong PIN too many times the data will self destruct. 
@@ -36,12 +36,12 @@ Information can only be written to the OnlyKey or wiped. This protects your data
 
 ### HARDWARE PASSWORD MANAGER
 Instead of having to remember all of your passwords you can just remember one 7 - 10 digit PIN. OnlyKey stores up to 24 unique accounts in offline storage and can be used to secure an unlimited number of accounts if used in conjunction with a software password manager. You can set up each of the 24 accounts using strong and random (up to 56 character) passwords along with the login page URLs, usernames, and/or two-factor authentication. This way whenever you need to log in you just detach the OnlyKey from your keyring and enter your PIN to unlock your passwords. The Onlykey automatically types them into the login fields for you with the press of a button.
-![](images/mobile.gif)
+![](/assets/mobile.gif)
 
 
 ### UNIVERSAL 2-FACTOR TOKEN
 Supports FIDO2 and FIDO Universal 2nd Factor Authentication (U2F), OATH TOTP, and Yubikey® compatible OTP. Chances are that if the website supports two-factor authentication, OnlyKey is compatible.
-![](images/fido2.gif)
+![](/assets/fido2.gif)
 
 *   [FIDO2 and FIDO Universal 2nd Factor Authentication (U2F)](/usersguide#universal-2nd-factor-u2f)
 *   [OATH TOTP](/usersguide#google-authenticator-totp)
@@ -56,7 +56,7 @@ SSH authentication is easy with passwordless login. Your SSH key remains securel
 
 ### OPENPGP SUPPORT
 Using OnlyKey makes OpenPGP easier than ever.
-![](images/agent.gif)
+![](/assets/agent.gif)
 
 *   [OnlyKey WebCrypt](/webcrypt)
 *   [OnlyKey Agent GPG](/onlykey-agent)

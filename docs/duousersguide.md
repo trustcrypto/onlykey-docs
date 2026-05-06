@@ -52,7 +52,7 @@ Linux users, if a UDEV rule has not been created previously follow the following
 :::
 
 :::tip
-As you use the OnlyKey app you can hover over icons for tooltips and click on icon's to browse to that topic in the documentation ![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/tooltip.png)
+As you use the OnlyKey app you can hover over icons for tooltips and click on icon's to browse to that topic in the documentation ![](/assets/tooltip.png)
 :::
 
 <i class="fa fa-arrow-down fa-3x"></i> ***Proceed to OnlyKey setup below***
@@ -67,19 +67,19 @@ As you use the OnlyKey app you can hover over icons for tooltips and click on ic
 If you would like to set advanced features such as a device PIN, select the advanced checkbox
 :::
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/config1-duo.png)
+![](/assets/config1-duo.png)
 
 :::callout
 **Step 2.** Select [Next] and follow the instructions to enter a backup passphrase
 :::
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/setup7-2.png)
+![](/assets/setup7-2.png)
 
 :::callout
 **Step 3.** If you have an OnlyKey backup to restore, select [Choose File] and select your OnlyKey backup file and then select [Next] to load it onto your OnlyKey. If you do not have a backup just select [Next] to complete the setup.
 :::
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/setup10.png)
+![](/assets/setup10.png)
 
 Your device is now set up and will automatically reboot. 
 
@@ -93,7 +93,7 @@ You can also use the Self-destruct PIN if one has been set.
 
 ## Setting up accounts {#account-setup}
 
-Prefer a how-to video? Watch one [here](https://vimeo.com/967163806) that demonstrates setting up a new OnlyKey<br>[![How-To: Setup New OnlyKey](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/set-password.jpeg)](https://vimeo.com/967163806)
+Prefer a how-to video? Watch one [here](https://vimeo.com/967163806) that demonstrates setting up a new OnlyKey<br>[![How-To: Setup New OnlyKey](/assets/set-password.jpeg)](https://vimeo.com/967163806)
 
 ### Configure Basic Login Info {#all-about-slots}
 
@@ -121,11 +121,11 @@ OnlyKey DUO has features that can be activated by pressing/holding buttons, find
 **Step 2.** Enter a label such as Gmail in the Label field, check the box next to Label, and click Submit.
 :::
 
-![](images/image36-duo.png)
+![](/assets/image36-duo.png)
 
 *Now the label you entered is assigned to slot 1a in the default green profile. Slot labels are helpful if you forget which button is assigned to which account you can open the OnlyKey app at any time to see how it is set up.*
 
-![](images/image66-duo.png)
+![](/assets/image66-duo.png)
 
 #### OnlyKey On-The-Go {#otg}
 
@@ -182,24 +182,24 @@ The example configuration shown below would be to set OnlyKey to store our Googl
 **Step 1.** Click the 1a button in the OnlyKey app, click the checkboxes and enter values as shown:
 :::
 
-![](images/image89-duo.png)
+![](/assets/image89-duo.png)
 
 :::callout
 **Step 2.** Click submit to save the configuration to OnlyKey:
 :::
 
 **Now the configuration is saved and shows up in the OnlyKey app as ''Google 1''**
-![](images/image91-duo.png)
+![](/assets/image91-duo.png)
 
 :::callout
 **Step 3.** Now to log in we browse to Google login page, if prompted we type our Gmail address and select Next. When presented with the password field we press button #1 on OnlyKey to output the password into the password field.
 :::
 
-![](images/image90.png)
+![](/assets/image90.png)
 
 OnlyKey types your passwords for you so it will work on any device, even on mobile devices.
 
-![](images/mobile.gif)
+![](/assets/mobile.gif)
 
 
 If you would like to learn more about setting usernames, passwords, and filling custom login forms check out [Set up a Slot (Advanced Login)](#set-up-a-slot-advanced)
@@ -215,7 +215,7 @@ There are many websites that allow you to generate a secure random password and 
 - 1password password generation tool available [here](https://1password.com/password-generator/)
 - LastPass password generation tool available [here](https://lastpass.com/generatepassword.php)
 
-![](images/image59.png)
+![](/assets/image59.png)
 
 #### Generate Strong Password via Browser Extension {#generate-strong-password-via-browser-extension}
 
@@ -223,7 +223,7 @@ Install a browser extension by selecting add to Chrome the same way that you ins
 
 Chrome Extension available from the Chrome Web Store [here](https://chrome.google.com/webstore/detail/strong-password-generator/emehklffcaphknhhfhadkjhpfapcbpco).
 
-![](images/image21.png)
+![](/assets/image21.png)
 
 <i class="fa fa-arrow-down fa-3x"></i> **Next, let's assign a OATH-TOTP secret for MFA**
 
@@ -248,7 +248,7 @@ If you are not a 2FA guru then this is the recommended method to use. Six digit 
 
 *The way you would typically set this up without OnlyKey is to download an authenticator app to your smartphone. You would then enable TOTP MFA on a website and the website would provide you with a QR code that looks like this:*
 
-![](images/image84.png)
+![](/assets/image84.png)
 
 *You would then take a picture of the QR code the website gives you in your authenticator app. The app then starts generating a 6 digit number that changes every 30 seconds that is required to be typed into the website login prompt in addition to your username and password.*
 
@@ -258,11 +258,11 @@ If you are not a 2FA guru then this is the recommended method to use. Six digit 
 **Step 1. Enable MFA (TOTP) on Website -** If you are unsure if the website you want to setup supports TOTP check [here](https://www.dongleauth.com/). For example to do this for your Google Account you must first enable 2-Step Verification and then you select ''SETUP'' as shown below:
 :::
 
-![](images/image85.png)
+![](/assets/image85.png)
 
 As you go through the steps you will be prompted to scan a QR code (Looks like a square bar code). You can go ahead and scan the QR code using your smartphone Authenticator app if you wish to create a backup and then select "CAN'T SCAN IT" as shown below:
 
-![](images/image6.png)
+![](/assets/image6.png)
 
 :::callout
 **Step 2. Copy and Paste Code into app -**
@@ -270,11 +270,11 @@ As you go through the steps you will be prompted to scan a QR code (Looks like a
 Selecting ''CAN'T SCAN IT'' will display the private code. Select this text and copy it as shown below:
 :::
 
-![](images/image38.png)
+![](/assets/image38.png)
 
 Now open the OnlyKey App and unlock your OnlyKey. Select the Slot to configure and paste this code into the field located next to ''OATH-TOTP (Google Authenticator)'' as shown below:
 
-![](images/image65.png)
+![](/assets/image65.png)
 
 Once you click submit your OnlyKey is ready to generate OTPs.
 
@@ -282,9 +282,9 @@ Once you click submit your OnlyKey is ready to generate OTPs.
 **Step 3. Generate OTP -** Place your cursor in the ''Enter code'' field and press the button that corresponds to the slot that was set. In the example above we set slot 2a so we press the #2 button to generate the OTP.
 :::
 
-![](images/image20.png)
+![](/assets/image20.png)
 
-![](images/image75.png)
+![](/assets/image75.png)
 
 :::warning
 OnlyKey is a device without a battery, it requires the OnlyKey App to be running in order to generate TOTPs. Without the app running it will generate a code of NOTSET. Alternatively, you can browse to [https://apps.crp.to](https://apps.crp.to) if the app is not available.
@@ -300,7 +300,7 @@ One requirement of TOTP (Time-based One-time Password) is having the correct tim
 
 However, OnlyKey TOTP will work on-the-go without the app running. All you have to do is browse to our web app [https://apps.crp.to](https://apps.crp.to) in Google Chrome or Firefox. This web app in addition to being used to send encrypted messages sets the current time on OnlyKey and login with TOTP will function as normal.
 
-![](images/totp.png)
+![](/assets/totp.png)
 
 #### Yubico® One-Time Password {#Yubico-one-time-password}
 
@@ -313,15 +313,15 @@ The majority of Yubikey® OTP applications online require Yubicloud setup. See t
 *   First download and install the [Yubikey® personalization tools](https://www.Yubico.com/support/download/)
 *   Go into Yubico® OTP and select ''Quick''
 
-![](images/image43.png)
+![](/assets/image43.png)
 
 *   Select the ''Hide values'' checkbox and select ''Regenerate'' to create a Public Identify, Private Identity, and Secret Key.
 
-![](images/image1.png)
+![](/assets/image1.png)
 
 *   Copy and paste these into the corresponding fields in the OnlyKey App Full Configuration (Advanced) tab.
 
-![](images/image62.png)
+![](/assets/image62.png)
 
 *   Select ''Set Slot'' to write these values to your OnlyKey
 *   Now your OnlyKey is ready to function in Yubikey® OTP mode
@@ -349,7 +349,7 @@ The following instructions show you how to set up a 3rd party device on Yubiclou
 **Step 3.** Insert Yubikey®, select a configuration slot, and click ''Write configuration'' button
 :::
 
-![](images/image5.png)
+![](/assets/image5.png)
 
 :::callout
 **Step 4.** Set the values shown in the Public Identity, Private Identity, and Secret Key to your OnlyKey.
@@ -363,7 +363,7 @@ The following instructions show you how to set up a 3rd party device on Yubiclou
 **Step 6.** This will open a web browser, to complete the registration enter the OTP in the ''OTP from the Yubikey®'' field by pressing the button on your OnlyKey.
 :::
 
-![](images/image46.png)
+![](/assets/image46.png)
 
 :::callout
 **Step 7.** Once the form is complete enter the Captcha and select Upload AES key.
@@ -373,7 +373,7 @@ The following instructions show you how to set up a 3rd party device on Yubiclou
 **Step 8.** Now you can test your OTP generated by OnlyKey on the site [https://demo.yubico.com/otp/verify](https://demo.yubico.com/otp/verify)
 :::
 
-![](images/image51.png)
+![](/assets/image51.png)
 
 :::tip
 Keep in mind that once you write this configuration to OnlyKey you can no longer use a Yubikey with the same configuration. Attempting to do this causes one of the devices to be out of sync.
@@ -383,7 +383,7 @@ Keep in mind that once you write this configuration to OnlyKey you can no longer
 
 No setup is required to use OnlyKey as a security key. When registering and authenticating OnlyKey as a security key you will see OnlyKey flash blue. To use OnlyKey as a security key follow the instructions given by the website where you wish to register OnlyKey. When using Onlykey as a security key you will see the light flash blue, press any button on the OnlyKey to register or login to a site. While your device is flashing blue typing is disabled in case you also have a slot set up for basic login. 
 
-![](images/fido2.gif)
+![](/assets/fido2.gif)
 
 
 The terminology for security keys can be a bit confusing so here are some quick definitions to make sense of it.
@@ -402,11 +402,11 @@ As mentioned above, FIDO U2F works as a 2nd factor and is supported for an unlim
 
 With resident credentials you can create a smoother, username-less login experience by saving some of the user data on the security key. To try it out we recommend using [https://www.passwordless.dev/usernameless](https://www.passwordless.dev/usernameless). As shown on the site not all browsers support this feature:
 
-![](images/passwordless.png)
+![](/assets/passwordless.png)
 
 One drawback of resident credentials is that physical devices have limited storage. OnlyKey stores up to 12 resident credentials. In the event this fills up resident credentials can be managed and removed with the [OnlyKey CLI](/command-line#list-and-remove-fido2-resident-key)
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/cli-cred-ls.png)
+![](/assets/cli-cred-ls.png)
 
 **FIDO2 Extensions**
 
@@ -415,7 +415,7 @@ FIDO2 allows support of extensions such as the HMAC SHA1 extension for challenge
 #### Challenge-Response {#challenge-response}
 
 Challenge response is a form of authentication where an application sends a unique challenge and OnlyKey sends back an HMACSHA1 response. This response may be used for things like encryption of data which is used by software such as [KeePassXC](#keepassxc). OnlyKey flashes yellow when a challenge is received and user presses any button on OnlyKey to authorize the response. OnlyKey supports customizable "HMAC User Input Mode" which allows the user to select if button press is required for challenge-response.
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/prefs.png)
+![](/assets/prefs.png)
 
 By default, no setup is required for challenge-response as OnlyKey has random HMAC key set by default and two available HMAC slots.
 
@@ -424,17 +424,17 @@ By default, no setup is required for challenge-response as OnlyKey has random HM
 Challenge-response is compatible with Yubikey devices. This permits OnlyKey and Yubikey to be used interchangeably for challenge-response with supported applications. In order to use OnlyKey and Yubikey interchangeably both must have the same HMAC key set. To set HMAC key on YubiKey we recommend using the [Yubikey Personalization Tool](https://www.yubico.com/products/services-software/download/yubikey-personalization-tools/).
 
 For example, a random secret key may be generated and loaded into slots 1 and 2 on Yubikey:
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/ykchal1.png)
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/ykchal2.png)
+![](/assets/ykchal1.png)
+![](/assets/ykchal2.png)
 
 The same secret key may be loaded into HMAC slots 1 and 2 using the OnlyKey App. Make sure to pad the end with 0s like this:
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/hmacload.png)
+![](/assets/hmacload.png)
 
 You will see a success message in the app "Last message received: Successfully set" indicating it loaded successfully
 
 This may also be loaded into slots 1 (130 in CLI) and 2 (129 in CLI) using the [OnlyKey CLI](/command-line).
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/okchal2-cli.png)
+![](/assets/okchal2-cli.png)
 
 Setting the same HMAC key (40 characters, 20 bytes hex) allows OnlyKey/Yubikey devices to generate the same responses and be used interchangeably.
 
@@ -460,7 +460,7 @@ What's great about KeePassXC:
 - Its cross platform, supports Windows, Linux, Mac (in contrast to KeePass which is for Windows)
 - Its offline, no passwords in the cloud
 - We collaborated with the KeePassXC team to develop a custom integration with OnlyKey that provides a major security benefit
-![](images/keepassxc.png)
+![](/assets/keepassxc.png)
 
 Starting with the 2.5.0 release of KeePassXC you can use OnlyKey in challenge-response mode to secure your KeePassXC password database.
 
@@ -494,7 +494,7 @@ Not sure how to export the passwords from your old password manager?<br>
 - (Optional) Copy the master password and save it to one of your OnlyKey slots using the OnlyKey app
 - Select "Add additional protection"
 - Select "Add YubiKey Challenge-Response"
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/keepassxc4.png)
+![](/assets/keepassxc4.png)
 - OnlyKey will show in the list of devices, select slot1 or slot2 and click done
 - OnlyKey will flash yellow, press any button, if importing OnlyKey may flash yellow several times, press any button when it does this to complete import
 - Congrats! You now have a new password database
@@ -544,25 +544,25 @@ To protect LastPass account with Google Authenticator 2FA follow the steps below
 **Step 1.** Go into Account settings-> Multi-factor Options and select the edit button in the Google Authenticator column.
 :::
 
-![](images/image71.png)
+![](/assets/image71.png)
 
 :::callout
 **Step 2.** Change to enabled and select View button next to Private Key
 :::
 
-![](images/image7.png)
+![](/assets/image7.png)
 
 :::callout
 **Step 3.** You will be prompted to enter your master password and then the key is displayed.
 :::
 
-![](images/image11.png)
+![](/assets/image11.png)
 
 :::callout
 **Step 4.** Copy and paste the key into the Google Auth OTP field of the OnlyKey app for the slot that you want to set up.
 :::
 
-![](images/image53.png)
+![](/assets/image53.png)
 
 :::callout
 **Step 5.** Make sure to check the radio button next to Google Auth OTP and select Submit.
@@ -572,11 +572,11 @@ To protect LastPass account with Google Authenticator 2FA follow the steps below
 **Step 6.** Go back to the LastPass app and select Update. You will be prompted for your password again and then your current verification code. Click inside the verification code box and press the button assigned to the slot you set up on your OnlyKey to type out the verification code.
 :::
 
-![](images/image74.png)
+![](/assets/image74.png)
 
-![](images/image13.png)
+![](/assets/image13.png)
 
-![](images/image10.png)
+![](/assets/image10.png)
 
 #### DashLane {#dashlane}
 
@@ -590,7 +590,7 @@ SmartLock is a password manager that is available in Google Chrome, it supports 
 
 OnlyKey has several customizable preferences that can be accessed from the preferences tab of the configuration app.
 
-![](images/image63.png)
+![](/assets/image63.png)
 
 ### Configurable Inactivity Lockout Period {#configurable-inactivity-lockout-period}
 
@@ -761,11 +761,11 @@ The OnlyKey stores private keys. These private keys are used for three different
   - **[OnlyKey WebCrypt](/webcrypt)** - Provides a way to securely use OnlyKey for OpenPGP in the browser. The Webcrypt app loads everything necessary to encrypt messages and files directly in the local browser without the need to send messages or files over the Internet. Data between [OnlyKey](https://onlykey.io) and the local browser is end-to-end encrypted. This provides encryption everywhere on-the-go and supports macOS, Windows, Linux, Chrome OS, Android, and iPhone (Safari on iOS 13.3+). More information on mobile support [here](/mobile).
 
 :::tip
-Watch a video [here](https://vimeo.com/374653109) that demonstrates using OnlyKey WebCrypt for file encryption<br>[![How-To: Use OnlyKey WebCrypt for file encryption](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/webcrypt.png)](https://vimeo.com/374653109)
+Watch a video [here](https://vimeo.com/374653109) that demonstrates using OnlyKey WebCrypt for file encryption<br>[![How-To: Use OnlyKey WebCrypt for file encryption](/assets/webcrypt.png)](https://vimeo.com/374653109)
 :::
   
   - **[OnlyKey GPG Agent](/onlykey-agent#gpg-agent-quickstart-guide)** - Provides a way to securely use OnlyKey for OpenPGP on a local computer. Instead of keeping keys on a computer, OnlyKey generates and securely stores your keys off of the computer and you can still easily use GPG to do things like sign emails, git commits, software packages etc.
-![](images/agent.gif)
+![](/assets/agent.gif)
 
 2.  **SSH Authentication** - SSH is a popular remote access tool that is often used by administrators. Thanks to the OnlyKey SSH Agent remote access can be passwordless and more secure. For information on using OnlyKey for SSH authentication see [OnlyKey SSH Agent](/onlykey-agent#ssh-agent-quickstart-guide).
 3.  **Secure Encrypted Backup** - This will backup everything including your stored accounts, preferences, and other keys to an encrypted text file. For information on backing up OnlyKey see [Secure Encrypted Backup](#secure-encrypted-backup-anywhere).
@@ -783,7 +783,7 @@ The Secure Encrypted Backup Anywhere feature allows you to backup OnlyKey on the
 ### Backup With OnlyKey App {#backup-with-onlykey-app}
 
 :::tip
-Prefer a how-to video? Watch one [here](https://vimeo.com/967904007) that demonstrates backing up OnlyKey using the OnlyKey App<br>[![How-To: OnlyKey Backup](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/backup.png)](https://vimeo.com/967904007)
+Prefer a how-to video? Watch one [here](https://vimeo.com/967904007) that demonstrates backing up OnlyKey using the OnlyKey App<br>[![How-To: OnlyKey Backup](/assets/backup.png)](https://vimeo.com/967904007)
 :::
 
 :::callout
@@ -798,7 +798,7 @@ Prefer a how-to video? Watch one [here](https://vimeo.com/967904007) that demons
 **Step 3.** Click inside the Backup data box and then hold down the 1 button on your OnlyKey for 5 seconds or more and then release. This will type out an encrypted backup of your OnlyKey configuration into the box. Select save file to save the backup file which has a timestamp so you can keep track of the latest backup file.
 :::
 
-![](images/image78.png)
+![](/assets/image78.png)
 
 :::tip
 Backup can take a long time if your Keyboard Type Speed is set to a low setting. To speed this up go to Preferences in the OnlyKey app and select a higher setting, 9 usually works well
@@ -834,7 +834,7 @@ The way that a restore works is that it overwrites the current information on yo
 
 If you used the OnlyKey App to create the backup then the name of this file will be ''onlykey-backup-<timestamp>.txt''. The timestamp can be used to make sure you are loading the latest backup.
 
-![](images/image45.png)
+![](/assets/image45.png)
 
 :::callout
 **Step 4.** Restore may take a minute or two depending on the amount of data to restore. You will know that the restore is complete when the OnlyKey reboots automatically.
@@ -850,7 +850,7 @@ If you used the OnlyKey App to create the backup then the name of this file will
 
 There is a tab named Firmware in the app. This may be used to load the latest firmware onto OnlyKey directly through the OnlyKey app.
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/firmware-duo.png)
+![](/assets/firmware-duo.png)
 
 - Download <a href="https://github.com/trustcrypto/OnlyKey-Firmware/releases/download/v3.0.4-prod/Signed_OnlyKey_3_0_4_STD.txt" target="_blank" download>OnlyKey DUO firmware</a>
 
@@ -895,20 +895,20 @@ The example configuration shown below would be to set OnlyKey to store our Dropb
 **Step 1.** Click the 1b button in the OnlyKey app, click the checkboxes and enter values as shown:
 :::
 
-![](images/image93.png)
+![](/assets/image93.png)
 
 :::callout
 **Step 2.** Click submit to save the configuration to OnlyKey:
 :::
 
 **Now the configuration is saved and shows up in the OnlyKey app as ''Dropbox''**
-![](images/image94-duo.png)
+![](/assets/image94-duo.png)
 
 :::callout
 **Step 3.** Now to log in we browse to Dropbox login page, click on the username field and hold button #1 (for more than one second) on OnlyKey to output the username and password into the login field.
 :::
 
-![](images/image92.png)
+![](/assets/image92.png)
 
 :::note
 Since not all Login pages are the same OnlyKey has options like tab (use to go to the next field) and Return (submit). These essentially press either the tab or return key so if you are unsure of how to set up your OnlyKey configuration try logging into your login page first by using just your keyboard. For the example above you would do this by entering your username, pressing the Return/Enter key, on the next page entering your password and then pressing the Return/Enter key to complete your login.<br><br>Before testing a configuration in your web browser it is a good idea to try it out in a text editor like notepad, just to make sure it looks right. The last thing you want is to find that you accidentally are typing your password out in the wrong field and now have to change the password.
@@ -930,14 +930,14 @@ Delays may be set to allow for the web page to load.
 **Step 1.** Click the 2a button in the OnlyKey app, select the Full Configuration (Advanced) tab, click the checkboxes and enter values as shown:
 :::
 
-![](images/image95.png)
+![](/assets/image95.png)
 
 :::callout
 **Step 2.** Click submit to save the configuration to OnlyKey:
 :::
 
 **Now the configuration is saved and shows up in the OnlyKey app as Custom Login**
-![](images/image96-duo.png)
+![](/assets/image96-duo.png)
 
 :::callout
 **Step 3.** Now to log in we browse to custom login page, click on the username field and press button #2 on OnlyKey to output the username and press RETURN. OnlyKey then waits 3 seconds for the page to load before entering password into the password field.
@@ -953,7 +953,7 @@ While this covers the majority of login scenerios there still may be some that d
 - Press RETURN<br>
 <br>
 You can enter ' \t' or ' \r' inline with slot data to type the extra TAB or RETURN and ' \d3' to DELAY 3 seconds.<br>
-![](images/image97.png)
+![](/assets/image97.png)
 
 Where in the username field the value is set to:<br>
 ```
@@ -981,9 +981,9 @@ Using the URL field provides protection against spear phishing attacks as this p
 
 **The example configuration shown below would be to set up a URL and password to automatically login to the Google page shown below. Notice that the username is already remembered by the website, so there is not a need to set this in the OnlyKey slot.**
 
-![](images/image72.png)
+![](/assets/image72.png)
 
-![](images/image23.png)
+![](/assets/image23.png)
 
 #### Test a Slot {#test-a-slot}
 
@@ -1013,39 +1013,39 @@ Once you set your desired account information to a slot then try it out by going
   </tr>
   <tr>
    <td>Site that does not automatically select username field after loading page (i.e.Kracken).
-![](images/image42.png)
+![](/assets/image42.png)
    </td>
    <td><em>With URL - You will notice that "Tab before UserName" is checked. This will select the username field as it is not automatically selected when the page loads.</em>
-![](images/image54.png)
+![](/assets/image54.png)
 <em>Without URL - Browse to the login page first and place cursor in the username field before selecting the assigned OnlyKey button.</em>
-![](images/image4.png)
+![](/assets/image4.png)
    </td>
   </tr>
   <tr>
    <td>Site where username is remembered after first login (i.e. Google).
    </td>
    <td><em>Password and 2FA only - This is usually the best option if you remember your username/email address as this will work on any computer whether your username is remembered or not. This method does not include URL in case you are prompted for a password.</em>
-![](images/image60.png)
+![](/assets/image60.png)
 <em>Username Remembered w/URL - If you use your device mostly on a computer where you username is remembered this is a good option. If you use this configuration on a computer where username is not remembered then you must output of the login information into notepad and paste into login fields.</em>
-![](images/image61.png)
+![](/assets/image61.png)
    </td>
   </tr>
   <tr>
    <td>Site that does not automatically select OTP code field (i.e. Salesforce)
-![](images/image22.png)
+![](/assets/image22.png)
 After loading next page
-![](images/image47.png)
+![](/assets/image47.png)
    </td>
    <td><em>You will notice that "Tab before OTP" is checked. This will select the OTP field as it is not automatically selected when the page loads.</em>
-![](images/image44.png)
+![](/assets/image44.png)
    </td>
   </tr>
   <tr>
    <td>Site where username and password is required first and then OTP code field appears below (i.e. IT Glue)
-![](images/image28.png)
+![](/assets/image28.png)
    </td>
    <td>
-![](images/image52.png)
+![](/assets/image52.png)
    </td>
   </tr>
 </table>

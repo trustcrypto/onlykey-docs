@@ -30,7 +30,7 @@ Before using a security key with a mobile device here are some considerations.
 Android Example:
 - Open the Chrome browser and browse to [https://www.passwordless.dev/mfa#heroFoot](https://www.passwordless.dev/mfa#heroFoot).
 - Create a test account, and when prompted select "Use this device with Fingerprint or PIN" to register, do the same to sign in.
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/android-built-in.png)
+![](/assets/android-built-in.png)
 
 #### How to Use Built-in Security Key on iOS
 

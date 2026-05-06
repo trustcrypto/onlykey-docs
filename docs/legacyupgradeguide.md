@@ -127,7 +127,7 @@ To do this in Windows open a command prompt and type 'certUtil -hashfile pathToF
 **Step 6.**  Now the firmware should appear at the bottom of the Teensy Loader application.
 :::
 
-![](images/image67.png)
+![](/assets/image67.png)
 
 :::note
 If a message prompts that 'HEX file is too large' ensure that your OnlyKey is plugged in.
@@ -141,15 +141,15 @@ If a message prompts that 'HEX file is too large' ensure that your OnlyKey is pl
 If your OnlyKey has a case on it you can just slip the two corners out of the case without completely removing the case.
 :::
 
-![](images/image16.png)
+![](/assets/image16.png)
 
 :::callout
 **Step 8.**  With the Teensy Loader in the foreground, you should now see the Teensy Loader progress bar and then a reboot complete appear in the Teensy Loader which indicates that the firmware has loaded successfully.
 :::
 
-![](images/image48.png)
+![](/assets/image48.png)
 
-![](images/image2.png)
+![](/assets/image2.png)
 
 **Under The Hood** - What actually happens when you load the firmware is that a mass erase is completed first. What this means is that all data is completely wiped, and then the new firmware is loaded.
 
@@ -161,6 +161,6 @@ Follow instructions here - [OnlyKey App Install](#onlykey-setup)
 ### In App Firmware Updates
 
 You may notice now that there is an option in the app to load firmware when setting up a device. There is also a tab named Firmware in the app. This may be used to load the latest firmware onto OnlyKey directly through the app, no backup/restore or wiping is required. Firmware updates are securely signed using a simple blockchain and verified by on the OnlyKey.
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/newfeature2.png)
+![](/assets/newfeature2.png)
 
 {% include links.html %}

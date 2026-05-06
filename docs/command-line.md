@@ -559,7 +559,7 @@ List current resident keys:
 ```
 onlykey-cli credential ls
 ```
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/cli-cred-ls.png)
+![](/assets/cli-cred-ls.png)
 
 Remove a resident key by credential ID
 
@@ -569,7 +569,7 @@ onlykey-cli credential rm eu7LPIjTNwIJt2Ws9LWJlXkiNKaueSEEGteZM2MT/lZtEuYo49V6de
 
 Once removed, list current resident keys to verify:
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/cli-cred-ls2.png)
+![](/assets/cli-cred-ls2.png)
 
 ## Source
 

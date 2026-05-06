@@ -20,13 +20,13 @@ Before getting started make sure you have OnlyKey firmware Beta 7 or later and t
 **Step 1.** Select the Advanced checkbox and then select [Next] to get started.
 :::
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/ite1.png)
+![](/assets/ite1.png)
 
 :::callout
 **Step 2.** Enter a PIN code, check the disclaimer box, and select [Next].
 :::
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/ite2.png)
+![](/assets/ite2.png)
 
 :::callout
 **Step 3.** Re-enter PIN code, and select [Next].
@@ -36,13 +36,13 @@ Before getting started make sure you have OnlyKey firmware Beta 7 or later and t
 **Step 4.** Enter a PIN code for second profile, check the disclaimer box, check the Plausible Deniability Profile radio button, and select [Next].
 :::
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/ite4.png)
+![](/assets/ite4.png)
 
 :::callout
 **Step 5.** If you wish to set a self-destruct PIN enter a PIN code, check the disclaimer box, and select [Next].
 :::
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/ite5.png)
+![](/assets/ite5.png)
 
 :::callout
 **Step 6.** Re-enter PIN code, and select [Next].
@@ -52,13 +52,13 @@ Before getting started make sure you have OnlyKey firmware Beta 7 or later and t
 **Step 7.** Follow the instructions to enter a Backup Passphrase and select [Next].
 :::
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/setup7-2.png)
+![](/assets/setup7-2.png)
 
 :::callout
 **Step 8.** If you have an OnlyKey backup to restore, select [Choose File] and select your OnlyKey backup file and then select [Next] to load it onto your OnlyKey. If you do not have a backup just select [Next] to complete the setup.
 :::
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/setup10.png)
+![](/assets/setup10.png)
 
 :::note
 Since plausible deniability mode does not support encryption, if accounts in your second profile of your backup have U2F or Yubikey 2FA set this will not be restored. TOTP mode will work in plausible deniability mode.
@@ -72,7 +72,7 @@ Since plausible deniability mode does not support encryption, if accounts in you
 **Step 10.** Select [Preferences] from the top menu and then click [Set Wipe Mode]. Full wipe will completely erase both the OnlyKey data and firmware in the event of a factory default. This is an important step as if this is not set it is possible to determine which firmware edition is loaded after doing a factory default, more information [here](/usersguide#configurable-wipe-mode)
 :::
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/pref.png)
+![](/assets/pref.png)
 
 ## Plausible Deniability FAQ
 

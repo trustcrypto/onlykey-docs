@@ -47,7 +47,7 @@ onlykey-agent users, make sure to install the latest version of onlykey-agent wi
 
 There is a tab named Firmware in the app. This may be used to load the latest firmware onto OnlyKey directly through the OnlyKey app.
 
-![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/newfeature2.png)
+![](/assets/newfeature2.png)
 
 - Download <a href="https://github.com/trustcrypto/OnlyKey-Firmware/releases/download/v3.0.4-prod/Signed_OnlyKey_3_0_4_STD.txt" target="_blank" download="Signed_OnlyKey_3_0_4_STD.txt">OnlyKey Standard Edition firmware</a>
 - Go to the Firmware tab in the app

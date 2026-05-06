@@ -350,7 +350,7 @@ With user interaction, the touch pin values change significantly. Also the touch
 
 Putting a device in config mode is required to configure certain things like PGP keys and some preferences:
 
-![](images/preferences.png)
+![](/assets/preferences.png)
 
 This secondary feature has been added to provide additional protection against the following scenario:
 
@@ -364,6 +364,6 @@ Additional security may be added with the backup key mode mentioned below.
 
 There is also an option to lock the backup key which ensures that the backup key may not be changed on a device. Enabling this option where there is no backup key permanently disables the backup feature until a factory default occurs.
 
-![](images/lockmode.png)
+![](/assets/lockmode.png)
 
 {% include links.html %}
