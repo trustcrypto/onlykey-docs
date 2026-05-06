@@ -24,7 +24,7 @@ from pathlib import Path
 SRC = Path('/tmp/onlykey-source/trustcrypto.github.io')
 DST = Path('/Users/t/Documents/GitHub/onlykey-docs')
 DOCS = DST / 'docs'
-IMAGES_OUT = DOCS / 'images'
+IMAGES_OUT = DST / 'assets'  # docmd convention: project-root assets/
 
 REPORT = []  # list of dicts to summarize
 
@@ -122,7 +122,7 @@ def convert_image(attrs):
         return None
     # Some Jekyll image.html includes use a path prefix or an alt
     alt = attrs.get('alt', '')
-    return f'![{alt}](images/{fname})'
+    return f'![{alt}](/assets/{fname})'
 
 
 def replace_includes(body, page_path):
@@ -175,10 +175,8 @@ def rewrite_links(body):
     def host_repl(m):
         path = m.group(1).rstrip('/')
         anchor = m.group(2) or ''
-        # If the path is empty (root), just / + anchor
         if not path or path == '/':
             return f'/{anchor.lstrip("#") and "#" + anchor.lstrip("#") or ""}'
-        # Strip leading / once for slug
         slug = path.lstrip('/')
         return f'/{slug}{anchor}'
 
@@ -190,6 +188,24 @@ def rewrite_links(body):
         return f'/{slug}{anchor}'
 
     body = BARE_HTML_LINK_RE.sub(bare_repl, body)
+
+    # GitHub raw image URLs -> /assets/X
+    body = re.sub(
+        r'https?://raw\.githubusercontent\.com/trustcrypto/trustcrypto\.github\.io/[^/]+/images/',
+        '/assets/',
+        body,
+    )
+    # Legacy docs.{crp.to,onlykey.io}/images/X -> /assets/X
+    body = re.sub(
+        r'https?://docs\.(?:crp\.to|onlykey\.io)/images/',
+        '/assets/',
+        body,
+    )
+    # Bare images/X (markdown) -> /assets/X
+    body = re.sub(r'(\]\()images/', r'\1/assets/', body)
+    body = re.sub(r'(src=")images/', r'\1/assets/', body)
+    body = re.sub(r'(href=")images/', r'\1/assets/', body)
+
     return body, warnings
 
 
@@ -244,9 +260,9 @@ def transform_file(src_path, rel_slug):
 
 
 def collect_image_refs(body):
-    """Find every images/X.png style reference in the body."""
+    """Find every /assets/X.png reference in the body."""
     refs = set()
-    for m in re.finditer(r'images/([A-Za-z0-9._/-]+)', body):
+    for m in re.finditer(r'/assets/([A-Za-z0-9._/-]+)', body):
         refs.add(m.group(1))
     return refs
 

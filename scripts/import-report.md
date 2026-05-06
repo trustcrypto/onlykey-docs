@@ -8,8 +8,11 @@
 - Pages imported: **28**
 - Pages with warnings: **25**
 - Images directly referenced and copied: **129**
-- Additional images copied from source images/ dir: **95**
-- Images referenced but missing from source: **0**
+- Additional images copied from source images/ dir: **0**
+- Images referenced but missing from source: **1**
+
+### Missing images
+- `9900/20224804/053d7474-a849-11e6-87f3-ab07dc536158.png`
 
 ## Pages
 
