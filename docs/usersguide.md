@@ -8,18 +8,12 @@ keywords: "OnlyKey, User's Guide"
 
 ## Start Here - Unpacking OnlyKey {#unpacking}
 
-:::callout
-**Step 1.** Remove the OnlyKey and the metal quick-connect keychain from packaging.
-:::
+::: steps
+1. Remove the OnlyKey and the metal quick-connect keychain from packaging.
 
-![](/assets/packaging.jpeg)
-
-:::callout
-**Step 2.** Attach the quick-connect to the OnlyKey, the other end of the quick-connect can be attached to your keyring.
-:::
-
-:::callout
-**Step 3.** (Optional) Check out OnlyKey accessories - [color cases](https://onlykey.io/products/onlykey-silicone-case?variant=469636644908), [mobile adapter (USB-C, Lightning)](https://onlykey.io/collections/accessories-1), [business workstation](https://onlykey.io/collections/workstation).
+   ![](/assets/packaging.jpeg)
+2. Attach the quick-connect to the OnlyKey; the other end of the quick-connect can be attached to your keyring.
+3. (Optional) Check out OnlyKey accessories — [color cases](https://onlykey.io/products/onlykey-silicone-case?variant=469636644908), [mobile adapter (USB-C, Lightning)](https://onlykey.io/collections/accessories-1), [business workstation](https://onlykey.io/collections/workstation).
 :::
 
 ***Proceed to setup below***
@@ -99,55 +93,32 @@ As you use the OnlyKey app you can hover over icons for tooltips and click on ic
 
 If you have already setup OnlyKey using quick setup proceed to [Account Setup](#account-setup)
 
-:::callout
-**Step 1.** Insert OnlyKey and select [Next] to get started.
+::: steps
+1. Insert OnlyKey and select [Next] to get started.
+
+   ![](/assets/config1.png)
+
+   *Before setting a PIN: you may find it easier to remember a pattern rather than a 7–10 digit PIN, similar to the patterns used to unlock a phone lock screen.*
+
+   ![](/assets/image86.png)
+2. Enter a PIN code on the OnlyKey Keypad, check the disclaimer box, and select [Next].
+
+   ![](/assets/ite2.png)
+3. Re-enter PIN code, and select [Next].
+4. Enter a PIN code for second profile, check the disclaimer box, and select [Next].
+
+   ![](/assets/config4.png)
+5. If you wish to set a self-destruct PIN, enter a PIN code, check the disclaimer box, and select [Next].
+
+   ![](/assets/config5.png)
+6. Re-enter PIN code, and select [Next].
+7. Follow the instructions to enter a Backup Passphrase and select [Next].
+
+   ![](/assets/setup7-2.png)
+8. If you have an OnlyKey backup to restore, select [Choose File], select your OnlyKey backup file, and then select [Next] to load it onto your OnlyKey. If you do not have a backup, just select [Next] to complete the setup.
+
+   ![](/assets/setup10.png)
 :::
-
-![](/assets/config1.png)
-
-:::tip "💡 Pro Tip"
-Before setting a PIN<br><br>You may find it easier to remember a pattern rather than a 7 - 10 digit PIN. Kind of like patterns used to unlock a phone lock screen:
-:::
-
-![](/assets/image86.png)
-
-:::callout
-**Step 2.** Enter a PIN code on the OnlyKey Keypad, check the disclaimer box, and select [Next].
-:::
-
-![](/assets/ite2.png)
-
-:::callout
-**Step 3.** Re-enter PIN code, and select [Next].
-:::
-
-:::callout
-**Step 4.** Enter a PIN code for second profile, check the disclaimer box, and select [Next].
-:::
-
-![](/assets/config4.png)
-
-:::callout
-**Step 5.** If you wish to set a self-destruct PIN enter a PIN code, check the disclaimer box, and select [Next].
-:::
-
-![](/assets/config5.png)
-
-:::callout
-**Step 6.** Re-enter PIN code, and select [Next].
-:::
-
-:::callout
-**Step 7.** Follow the instructions to enter a Backup Passphrase and select [Next].
-:::
-
-![](/assets/setup7-2.png)
-
-:::callout
-**Step 8.** If you have an OnlyKey backup to restore, select [Choose File] and select your OnlyKey backup file and then select [Next] to load it onto your OnlyKey. If you do not have a backup just select [Next] to complete the setup.
-:::
-
-![](/assets/setup10.png)
 
 Your device is now set up and will automatically reboot. You will be prompted to enter your PIN from now on when using the OnlyKey.
 
