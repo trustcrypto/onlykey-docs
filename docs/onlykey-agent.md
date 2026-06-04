@@ -14,7 +14,7 @@ OnlyKey Agent is a hardware-based SSH and GPG agent that allows offline cold sto
 
 SSH is a popular remote access tool that is often used by administrators and with OnlyKey Agent remote access can be passwordless. GPG (or GnuPG) is a versatile OpenPGP tool that is used for encryption and signing. The way OnlyKey Agent works is that the indicator light on OnlyKey will blink purple for a sign request (such as SSH authentication), and will blink turquoise for a decrypt request. To authorize a user must press button (or [challenge code](/usersguide#derived-challenge-mode)) on OnlyKey.
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 Prefer a how-to video? Watch one [here](https://vimeo.com/374479136)<br>[![How-To: Use OnlyKey for Passwordless SSH](/assets/ssh-thumb.png)](https://vimeo.com/374479136)
 :::
 

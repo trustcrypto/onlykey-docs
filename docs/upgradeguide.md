@@ -19,7 +19,7 @@ This release has a lot of improvements and new features. Here is the list of new
 
 ## Backup Before Upgrading
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 If your OnlyKey has firmware v0.2-beta.8 or earlier you must backup OnlyKey prior to upgrading. Once firmware is upgraded restore backup file.
 :::
 

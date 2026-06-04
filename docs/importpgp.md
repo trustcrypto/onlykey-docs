@@ -32,7 +32,7 @@ If you wish to generate a new key, follow the steps below:
 
 #### Generate OpenPGP Key Using ProtonMail {#generating-keys-protonmail}
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 Only generate keys on a computer that you trust (i.e. never a publicly accessible or shared workstation).
 :::
 
@@ -54,11 +54,11 @@ Only generate keys on a computer that you trust (i.e. never a publicly accessibl
 
 #### Generate OpenPGP Key Using Keybase {#generating-keys-keybase}
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 Only generate keys on a computer that you trust (i.e. never a publicly accessible or shared workstation).
 :::
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 Prefer a how-to video? Watch one [here](https://vimeo.com/374512727)<br>[![How-To: Generate and load a new OpenPGP key on OnlyKey](/assets/pgp.png)](https://vimeo.com/374512727)
 :::
 
@@ -118,7 +118,7 @@ Prefer a how-to video? Watch one [here](https://vimeo.com/374512727)<br>[![How-T
 **Step 10.** Highlight your private key and copy to a text file. Save this to removable media like a USB flash drive or CD/DVD. You may want to make multiple copies as there is no way to recover this key if you lose it. Also ensure you write down your key passphrase (Same as Keybase account password) this is required to unlock your key. Store both in a physically secure location.
 :::
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 A great physically secure location is a safe, preferably a fire safe.
 :::
 
@@ -137,7 +137,7 @@ Now all that is needed to start sending encrypted messages is to load the key yo
 
 #### Generate OpenPGP Key Using GPG {#generating-keys-gpg}
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 Only generate keys on a computer that you trust (i.e. never a publicly accessible or shared workstation).
 :::
 
@@ -230,7 +230,7 @@ $ gpg --output private.asc --armor --export-secret-key <YOUR EMAIL>
 
 ### Loading Keys {#loading-keys}
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 Only load keys on a computer that you trust (i.e. never a publicly accessible or shared workstation).
 :::
 
@@ -262,13 +262,13 @@ Selecting set as backup key will use your Keybase key to encrypt backups. Settin
 
 You should see a message displayed indicating the key was successfully saved to OnlyKey.
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 If you used Protonmail or Keybase to create your PGP key your OnlyKey is ready to send/receive OpenPGP encrypted messages/files using [WebCrypt](/webcrypt). If not create a Keybase profile -> select 'add a PGP key' -> select 'I have one already' -> paste your public key and upload to Keybase. Alternatively, public key can be pasted to use WebCrypt. <br><br>For using OpenPGP key with GPG get started with [onlykey-agent here](/onlykey-agent).
 :::
 
 ### Exporting Keys {#exporting-keys}
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 Only export keys on a computer that you trust (i.e. never a publicly accessible or shared workstation).
 :::
 
@@ -308,7 +308,7 @@ Some PGP/GPG keys contain legacy settings or values not supported by OpenPGP. Th
 
 #### Loading Keys Advanced {#loading-keys-a}
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 Only load keys on a computer that you trust (i.e. never a publicly accessible or shared workstation).
 :::
 

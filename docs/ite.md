@@ -54,7 +54,7 @@ You can ensure the integrity of your downloaded file by verifying the checksum. 
 
 ![](/assets/ite6.png)
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 ***Factory Default?***<br><br>
 To perform a factory default you have two options:
 <br>

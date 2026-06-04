@@ -1,7 +1,7 @@
 const { defineConfig } = require('@docmd/core');
 
 module.exports = defineConfig({
-  title: 'OnlyKey Documentation',
+  title: 'OnlyKey Docs',
   description: 'Documentation for OnlyKey hardware security tokens by CryptoTrust.',
   url: 'https://docs.onlykey.io',
 

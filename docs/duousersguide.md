@@ -51,7 +51,7 @@ Linux users, if a UDEV rule has not been created previously follow the following
 **Step 2.** Install and launch the app.
 :::
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 As you use the OnlyKey app you can hover over icons for tooltips and click on icon's to browse to that topic in the documentation ![](/assets/tooltip.png)
 :::
 
@@ -63,7 +63,7 @@ As you use the OnlyKey app you can hover over icons for tooltips and click on ic
 **Step 1.** Insert OnlyKey DUO
 :::
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 If you would like to set advanced features such as a device PIN, select the advanced checkbox
 :::
 
@@ -103,7 +103,7 @@ The Slots area of the application is where you will set up things like passwords
 
 **What are profiles?** In the app you will notice four colors -- green, blue, yellow, purple. These colors corrispond to OnlyKey DUOs four profiles. You can hold button #3 down on OnlyKey DUO for 5+ seconds to switch between profiles. The light on OnlyKey will change to green, blue, yellow, purple to indicate which profile is active. Four profiles allows using OnlyKey DUO to store more than just 6 slots (1a, 1b, 2a, 2b, 3a, 3b), there are a total of 24 available slots.
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 OnlyKey DUO has features that can be activated by pressing/holding buttons, find the full list of [button features here](/features#button-definitions)
 :::
 
@@ -166,7 +166,7 @@ Since OnlyKey types out this information this method works on all computers and 
 
 Another low tech option is to write your labels on a card/paper and carry this in your wallet.
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 Obviously, no sensitive information should be written on card/paper or saved to your slot labels. Just something that helps you remember which account is assigned to which button.
 :::
 
@@ -240,7 +240,7 @@ Two-factor authentication (2FA) is essentially an extra step that is required du
 
 *DISCLAIMER - Google® is the registered trademarks of Google Inc. OnlyKey is not associated with or sponsored by Google® Inc.*
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 If you are not a 2FA guru then this is the recommended method to use. Six digit codes will be typed automatically by OnlyKey.
 :::
 
@@ -286,7 +286,7 @@ Once you click submit your OnlyKey is ready to generate OTPs.
 
 ![](/assets/image75.png)
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 OnlyKey is a device without a battery, it requires the OnlyKey App to be running in order to generate TOTPs. Without the app running it will generate a code of NOTSET. Alternatively, you can browse to [https://apps.crp.to](https://apps.crp.to) if the app is not available.
 :::
 
@@ -306,7 +306,7 @@ However, OnlyKey TOTP will work on-the-go without the app running. All you have 
 
 *DISCLAIMER - Yubico® and Yubikey® are the registered trademarks of Yubico® AB. OnlyKey is not associated with or sponsored by Yubico® AB. Yubikey® OTP has been released by Yubico® as open source software with license found [here](https://github.com/Yubico/Yubico-c/blob/master/COPYING)*
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 The majority of Yubikey® OTP applications online require Yubicloud setup. See the Yubicloud setup section after setting up Yubico® OTP.
 :::
 
@@ -327,7 +327,7 @@ The majority of Yubikey® OTP applications online require Yubicloud setup. See t
 *   Now your OnlyKey is ready to function in Yubikey® OTP mode
 *   The Yubikey® OTP will be generated when the corresponding button is pressed.
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 Keep in mind that Yubico® OTP is a counter based authenticator so you can have only one authenticator set with the same values. If you provision multiple OnlyKeys or Yubikeys with the same values only one device will work. The majority of Yubikey® OTP applications online require Yubicloud setup. See the Yubicloud setup section after setting up Yubico® OTP.
 :::
 
@@ -375,7 +375,7 @@ The following instructions show you how to set up a 3rd party device on Yubiclou
 
 ![](/assets/image51.png)
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 Keep in mind that once you write this configuration to OnlyKey you can no longer use a Yubikey with the same configuration. Attempting to do this causes one of the devices to be out of sync.
 :::
 
@@ -483,7 +483,7 @@ Starting with the 2.5.0 release of KeePassXC you can use OnlyKey in challenge-re
 
 You can either import passwords to a create a new KeePassXC database by going to Database -> Import, or create a new empty KeePassXC database by selecting "Create a new KeePassXC database"
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 Not sure how to export the passwords from your old password manager?<br>
 - Chrome/Brave - Go to Settings -> Passwords -> click ... and select Export passwords<br>
 :::
@@ -499,7 +499,7 @@ Not sure how to export the passwords from your old password manager?<br>
 - OnlyKey will flash yellow, press any button, if importing OnlyKey may flash yellow several times, press any button when it does this to complete import
 - Congrats! You now have a new password database
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 **Remember to securely delete your exported password file after you have imported it into KeePassXC**
 :::
 
@@ -518,7 +518,7 @@ While your KeePassXC database is encrypted and can be synced to multiple devices
 - Move your KeePassXC kbdx file to your Cryptomator vault
 - Congrats! You now can access your new password database from any computer with Internet access, Cryptomator, and your OnlyKey.
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 So now your passwords are very secure, but you need to make sure they aren't so secure that you lock yourself out. Create a backup of both your KeePassXC database and your [OnlyKey](#secure-encrypted-backup-anywhere) and keep it somewhere safe, like in an actual safe. If you don't keep your Cryptomator password and KeePassXC password on your OnlyKey make sure you have a backup of those as well. Be sure to keep your OnlyKey backup passphrase in a safe location too in case you forget.
 :::
 
@@ -655,7 +655,7 @@ OnlyKey supports HMAC challenge-response. By default, user input (button press) 
 
 You can change your backup key/passphrase at any time by entering your PIN to put the device in config mode. By setting backup key mode to locked, the backup key/passphrase may not be changed. This setting provides extra security so that even if an adversary has your PIN and has physical access to your device they would not be able to backup and restore your data.
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 With OnlyKey DUO, if no PIN is set the backup key is locked by default.
 :::
 
@@ -688,7 +688,7 @@ By default, OnlyKey may only type regular keyboard characters, TAB, and RETURN. 
 - Escape (\E)
 - Delay (\#) # is number of seconds to wait
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 Once you enable this feature you will no longer be able to set slot values without first putting OnlyKey into config mode. This adds an extra layer of security for system administrators.
 :::
 
@@ -760,7 +760,7 @@ The OnlyKey stores private keys. These private keys are used for three different
 1.  **Signing and Encrypted Messages/Files (OpenPGP)**
   - **[OnlyKey WebCrypt](/webcrypt)** - Provides a way to securely use OnlyKey for OpenPGP in the browser. The Webcrypt app loads everything necessary to encrypt messages and files directly in the local browser without the need to send messages or files over the Internet. Data between [OnlyKey](https://onlykey.io) and the local browser is end-to-end encrypted. This provides encryption everywhere on-the-go and supports macOS, Windows, Linux, Chrome OS, Android, and iPhone (Safari on iOS 13.3+). More information on mobile support [here](/mobile).
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 Watch a video [here](https://vimeo.com/374653109) that demonstrates using OnlyKey WebCrypt for file encryption<br>[![How-To: Use OnlyKey WebCrypt for file encryption](/assets/webcrypt.png)](https://vimeo.com/374653109)
 :::
   
@@ -782,7 +782,7 @@ The Secure Encrypted Backup Anywhere feature allows you to backup OnlyKey on the
 
 ### Backup With OnlyKey App {#backup-with-onlykey-app}
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 Prefer a how-to video? Watch one [here](https://vimeo.com/967904007) that demonstrates backing up OnlyKey using the OnlyKey App<br>[![How-To: OnlyKey Backup](/assets/backup.png)](https://vimeo.com/967904007)
 :::
 
@@ -800,7 +800,7 @@ Prefer a how-to video? Watch one [here](https://vimeo.com/967904007) that demons
 
 ![](/assets/image78.png)
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 Backup can take a long time if your Keyboard Type Speed is set to a low setting. To speed this up go to Preferences in the OnlyKey app and select a higher setting, 9 usually works well
 :::
 
@@ -883,7 +883,7 @@ Android and iOS is supported by using a USB on-the-go (OTG) adapter. For more in
 OnlyKey DUO by default has no device PIN required and when no device PIN is set allows users to set static passwords or multi-factor authentication to slots. This limitation only applies when OnlyKey DUO has no device PIN, to enable full features and perform advanced logins set a device PIN in the ''Setup'' tab of the OnlyKey App. This device PIN provides physical security in the event the OnlyKey DUO is lost or stolen
 :::
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 PIN may be entered via OnlyKey App or by physical touch. Touch buttons 1, 2, 3 to enter 1, 2, 3 and hold (for 1 second) buttons 1, 2, 3 to enter 4, 5, 6.
 :::
 
@@ -973,7 +973,7 @@ To do even more like press special keys such as Ctrl-Alt-Del OnlyKey has a speci
 
 Additionally, by using the URL field in Full Configuration (Advanced) we can have the OnlyKey type the login page URL into the browser and browse to the login page. This way a one-touch login is possible. Just select the empty URL field in the browser and the URL is automatically typed out and Return is pressed to browse to the site. Once on the site loads the password is entered and the login is complete.
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 Using the URL field provides protection against spear phishing attacks as this provides assurance that the site you are entering your password into is the legitimate site. For example, if you receive an email asking you to log into your account to verify something instead of clicking the link in the email to login you would use OnlyKey to browse to the correct site to login.
 <br>
 *Need a URL longer than 56 characters? Try using a URL shortner like Bit.ly*

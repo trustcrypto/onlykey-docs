@@ -40,7 +40,7 @@ If you are a new OnlyKey user just complete steps 2 and 3 below as you won't hav
 
 **Before Getting Started**
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 Legacy firmware loading wipes all data from OnlyKey. Be sure to have a backup of OnlyKey data and the backup key before loading firmware.
 :::
 
@@ -116,7 +116,7 @@ File Name
 </table>
 
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 To do this in Windows open a command prompt and type 'certUtil -hashfile pathToFileToCheck SHA256'. To do this in Linux open a terminal and type 'sha256sum pathToFileToCheck'. Where pathToFileToCheck is replaced with the path of the file you are checking.
 :::
 
@@ -137,7 +137,7 @@ If a message prompts that 'HEX file is too large' ensure that your OnlyKey is pl
 **Step 7.**  In order to enable the OnlyKey to upload the new firmware a jumper (Paperclip, aluminum foil etc) must make contact between the two small copper color circles shown while the OnlyKey is plugged into the USB port.
 :::
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 If your OnlyKey has a case on it you can just slip the two corners out of the case without completely removing the case.
 :::
 

@@ -88,7 +88,7 @@ A - If you are not concerned with plausible deniability then yes the self-destru
 Q - Wouldn't it be possible for an adversary to brute force the unknown primary profile PIN by trying 9 pins and then entering the known secondary profile pin?<br>
 A - When using a plausible deniability profile there is a counter that counts how many failed login attempts since the last primary profile login. You have a maximum of 20 failed attempts since the last successful login to the primary profile. Once that is reached the primary profile hash is deleted, essentially the primary profile is gone forever.
 
-:::warning "Warning"
+:::warning "⚠️ Warning"
 This means if you have a plausible deniability profile you have to occasionally log into your standard profile. If you use the plausible deniability profile 20 times in a row the standard profile will no longer be accessible.
 :::
 

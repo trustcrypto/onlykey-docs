@@ -38,7 +38,7 @@ iOS Example:
 - Open the Safari (14 or later) browser and browse to [https://www.passwordless.dev/mfa#heroFoot](https://www.passwordless.dev/mfa#heroFoot).
 - Create a test account, and when prompted select the built-in security key to register, do the same to sign in.
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 Built-in Mobile Biometric 2FA Works Together with OnlyKey <br>OnlyKey can be used together with mobile apps that permit login via fingerprint (Touch ID / Face ID). Just use OnlyKey to enter password and/or 2FA for the mobile app first time login, then once logged in enable the built-in mobile biometric 2FA for future logins.
 :::
 
@@ -82,7 +82,7 @@ This is currently supported using Firefox and Chrome browsers for Android. To us
 - Accept the pop-up messages that appear so that the device may communicate with OnlyKey
 - Enter the challenge code on OnlyKey
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 The challenge code is an added security feature, if ease of use is the priority this can be turned off so that pressing any button will confirm. To do this set 'Disable Challenge Code for PGP' in the OnlyKey app preferences.
 :::
 

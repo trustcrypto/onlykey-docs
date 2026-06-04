@@ -29,7 +29,7 @@ WebCrypt integrates with services like [Keybase](https://keybase.io/) and [Proto
 [Decrypt Messages](https://apps.crp.to/decrypt)
 
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 WebCrypt 3.0 Demo [here](https://vimeo.com/505377733) that demonstrates using OnlyKey WebCrypt for file encryption<br>[![Demo: OnlyKey WebCrypt 3.0 - Now Supporting Multiple Recipients and ProtonMail](/assets/webcrypt3.gif)](https://vimeo.com/505377733)
 :::
 
@@ -55,7 +55,7 @@ With OnlyKey, private keys remain securely offline. Private keys are not accessi
 **Receive an encrypted message or file -** To decrypt a message or file browse to [https://apps.crp.to/decrypt](https://apps.crp.to/decrypt) or [https://apps.crp.to/decrypt-file](https://apps.crp.to/decrypt-file).
 :::
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 You can receive encrypted messages and files from anyone, no technical skills are required!<br><br>
 Receiving encrypted files is as easy as putting a custom link in your email signature:<br><br>
 **Bob Smith**<br>
@@ -80,7 +80,7 @@ This link provides information to let your sender know what WebCrypt is, why it'
 
 After configuring your OnlyKey following [these instructions](/importpgp#generating-keys) you can browse to the [Webcrypt app](https://apps.crp.to/encrypt) to send secure messages/files.
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 Watch a video [here](https://vimeo.com/374653109) that demonstrates using OnlyKey WebCrypt for file encryption<br>[![How-To: Use OnlyKey WebCrypt for file encryption](/assets/webcrypt.png)](https://vimeo.com/374653109)
 :::
 
@@ -91,7 +91,7 @@ To create encrypted PGP message or file just:
 - Enter the recipient's Keybase username or Protonmail email in the first box
 - Enter your Keybase username or Protonmail email (for the key you loaded onto OnlyKey) in the second box.
 
-:::tip "Pro Tip"
+:::tip "💡 Pro Tip"
 If you didn't load your key onto OnlyKey follow these [these instructions](/importpgp#generating-keys)
 :::
 
