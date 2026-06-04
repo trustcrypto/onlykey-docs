@@ -47,4 +47,3 @@ onlykey-cli settime
 This command may be set to run whenever the USB device is connected by using the UDEV rules [here](/linux) and following the instructions [here](https://unix.stackexchange.com/questions/65891/how-to-execute-a-shellscript-when-i-plug-in-a-usb-device).
 
 
-{% include links.html %}

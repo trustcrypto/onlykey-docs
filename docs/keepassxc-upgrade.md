@@ -39,4 +39,3 @@ Re-enable KeePassXC challenge-response:
 - OnlyKey will flash yellow, press button to enable challenge-response
 - Close KeePassXC
 
-{% include links.html %}

@@ -66,7 +66,7 @@ Keys are loaded using the OnlyKey App. Step by step directions for generating an
 *   [Generate keys](/importpgp#generating-keys) using Keybase
 *   [Load keys](/importpgp#loading-keys) onto OnlyKey
 
-### SELF-DESTRUCT FEATURE
+### SELF-DESTRUCT FEATURE {#self-destruct-feature}
 In a pinch and want to wipe your OnlyKey? Enter your self-destruct PIN to wipe EVERYTHING! Plus you can always restore from backup easily.
 
 *   [What does entering the self destruct PIN do?](/faq#what-does-entering-the-self-destruct-pin-do)
@@ -159,7 +159,7 @@ OnlyKey is the world's first device to allow changing your keyboard layout on th
 *   Hold button #1 down for 5+ seconds to start quick setup in manual mode.
 *   Hold button #2 down for 5+ seconds to start quick setup in auto mode.
 
-#### Locked OnlyKey {#uninitialized-onlykey}
+#### Locked OnlyKey {#locked-onlykey}
 
 *   While locked buttons only function to enter PIN code to unlock OnlyKey, 7-10 digits.
 
@@ -208,4 +208,3 @@ OnlyKey is the world's first device to allow changing your keyboard layout on th
 - OnlyKey and OnlyKey DUO both support the same features, detailed technical description of differences available [here](/security#about-differences-between-onlykey-and-onlykey-duo).
 
 
-{% include links.html %}

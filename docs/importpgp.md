@@ -132,7 +132,7 @@ A great physically secure location is a safe, preferably a fire safe.
 
 Now all that is needed to start sending encrypted messages is to load the key you generated onto your OnlyKey.
 
-<i class="fa fa-arrow-down fa-3x"></i> [***Proceed to Loading Keys below***](#loading-keys)
+[***Proceed to Loading Keys below***](#loading-keys)
 
 
 #### Generate OpenPGP Key Using GPG {#generating-keys-gpg}
@@ -402,4 +402,3 @@ You should see a message displayed indicating the key was successfully saved to 
 
 There are many possible configurations for GPG keys some of which may not be parsable in the OnlyKey app. Advanced configurations such as subkeys with different passphrases than the root keys are parsable using the python script [here](https://github.com/trustcrypto/python-onlykey/blob/master/tests/PGPparseprivate.py).
 
-{% include links.html %}

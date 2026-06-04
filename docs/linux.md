@@ -28,7 +28,7 @@ $ sudo udevadm control --reload-rules && sudo udevadm trigger
 
 For Debian user's install the DEB below.
 
-[<i class="fa fa-linux fa-2x"></i> **Linux**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.5.0/OnlyKey_5.5.0_amd64.deb)
+[**Linux**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.5.0/OnlyKey_5.5.0_amd64.deb)
 
 For other Linux users you may install the OnlyKey app via [snapcraft](https://snapcraft.io/onlykey-app)
 
@@ -85,4 +85,3 @@ Additonal details are provided in the udev rule here - [https://github.com/trust
 - Another example is provided for OnlyKey to blink blue whenever the udev rule is run. This is useful for visual verification of LUKS disk decryption, additional details available [here](/full-disk-encryption)
 
 
-{% include links.html %}

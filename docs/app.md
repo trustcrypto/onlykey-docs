@@ -33,21 +33,21 @@ For information on using the app with OnlyKey see the [OnlyKey User's Guide](/us
 **Step 1.** Download installer
 :::
 
-[<i class="fa fa-apple fa-2x"></i> **macOS**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey.App.5.3.6.dmg)
+[**macOS**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey.App.5.3.6.dmg)
 
-[<i class="fa fa-windows fa-2x"></i> **Windows**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey_5.3.6.exe)
+[**Windows**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey_5.3.6.exe)
 
 :::note
 Windows users, there is a portable version of the app [here](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey_Portable_5.3.6.exe). This permits using the OnlyKey App in enterprise and environments where users may not have admin rights.
 :::
 
-[<i class="fa fa-linux fa-2x"></i> **Linux**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.5.0/OnlyKey_5.5.0_amd64.deb)
+[**Linux**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.5.0/OnlyKey_5.5.0_amd64.deb)
 
 :::note
 Linux users, if a UDEV rule has not been created previously follow the following instructions [here](/linux), additionally the OnlyKey app may now be installed via snapcraft - [Linux Guide](/linux)
 :::
 
-[<i class="fa fa-chrome fa-2x"></i> **ChromeOS / ARM**](/app#onlykey-chrome-app)
+[**ChromeOS / ARM**](/app#onlykey-chrome-app)
 
 :::callout
 **Step 2.** Install and launch the app.
@@ -59,7 +59,7 @@ You can ensure the integrity of your downloaded file by verifying the checksum. 
 
 If you have an OnlyKey to set up, once you have installed the app proceed to [OnlyKey Setup](/usersguide#onlykey-setup)
 
-### OnlyKey Chrome App 
+### OnlyKey Chrome App {#onlykey-chrome-app}
 
 The Chrome app has limited features and should only be used where the desktop app is unavailable such as on ChromeOS or unsupported ARM based operating systems. 
 
@@ -110,11 +110,10 @@ The Chrome app has limited features and should only be used where the desktop ap
 
 Check out the [OnlyKey Support Forum](https://forum.onlykey.io)
 
-Check out the [OnlyKey Documentation](https://docs.crp.to)
+Check out the [OnlyKey Documentation](https://docs.onlykey.io)
 
 ## Source
 
 [OnlyKey App on Github](https://github.com/trustcrypto/OnlyKey-App)
 
 
-{% include links.html %}

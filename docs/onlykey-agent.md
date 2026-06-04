@@ -24,7 +24,7 @@ Example shows import (-i) of an existing OpenPGP public key (eccpub.asc) to GnuP
 
 ![](/assets/pass.gif)
 
-## SSH Agent Quickstart Guide
+## SSH Agent Quickstart Guide {#ssh-agent-quickstart-guide}
 
 1) After installing [prerequisites](#installation), install OnlyKey agent on your client machine:
 
@@ -56,7 +56,7 @@ Cut and paste the whole string into your server ~/.ssh/authorized_keys file, you
 $ onlykey-agent identity@myhost -c
 ```
 
-You will be prompted for a challenge code, type this on your OnlyKey to complete log in. If you wish to just require any button press to login, in the OnlyKey App -> Preferences choose to [disable challenge code](/usersguide#challenge-mode) (device must be in config mode to change setting).
+You will be prompted for a challenge code, type this on your OnlyKey to complete log in. If you wish to just require any button press to login, in the OnlyKey App -> Preferences choose to [disable challenge code](/usersguide#derived-challenge-mode) (device must be in config mode to change setting).
 
 
 ### Common SSH Use Cases
@@ -133,7 +133,7 @@ The same works for Mercurial (e.g. on [BitBucket](https://confluence.atlassian.c
 	$ hg push
 
 
-## GPG Agent Quickstart Guide
+## GPG Agent Quickstart Guide {#gpg-agent-quickstart-guide}
 
 1) After installing [prerequisites](#installation) and setting [Derived Key User Input Mode](/onlykey-agent#setting-derived-key-user-input-mode) install OnlyKey agent on your client machine:
 
@@ -301,7 +301,7 @@ uid         [ultimate] Foobar
 ssb   nistp256/35F58F26 2017-12-05 [E]
 ```
 
-## Stored Keys
+## Stored Keys {#stored-keys}
 
 By default OnlyKey will generate a random key that is used to derive an unlimited number of keys for SSH and GPG use. Since each derived key is different based on the identity@myhost provided, it is required to copy the unique public key for each host.
 
@@ -367,7 +367,7 @@ Cut and paste the whole string into your server ~/.ssh/authorized_keys file, you
 $ onlykey-agent identity@myhost -c -sk ECC2
 ```
 
-### GPG Agent Quickstart Guide (Stored Keys)
+### GPG Agent Quickstart Guide (Stored Keys) {#gpg-agent-quickstart-guide-stored-keys}
 
 1) After installing [prerequisites](#installation), [loading OpenPGP key](/importpgp#loading-keys), and setting [Stored Key User Input Mode](/onlykey-agent#setting-stored-key-user-input-mode), install OnlyKey agent on your client machine:
 
@@ -398,7 +398,7 @@ If you wish to switch back to your software keys unset GNUPGHOME.
 ## Installation
 
 ### Windows Install with dependencies
-Currently Windows is not supported directly but may be used with a Linux virtual machine in Windows Subsystem for Linux (WSL 2) by following instructions [here](https://docs.crp.to/wsl) Another alternative is to use [OpenSSH v8.2](/openssh) which supports OnlyKey as a FIDO security key.
+Currently Windows is not supported directly but may be used with a Linux virtual machine in Windows Subsystem for Linux (WSL 2) by following instructions [here](/wsl) Another alternative is to use [OpenSSH v8.2](/openssh) which supports OnlyKey as a FIDO security key.
 
 ### MacOS Install with dependencies
 We recommend installing with [Homebrew](https://brew.sh/).
@@ -679,7 +679,7 @@ Stored key:
 $ onlykey-agent -c user@host -e rsa -sk RSA2
 ```
 
-### Load Existing OpenSSH Private Key (Stored Keys)
+### Load Existing OpenSSH Private Key (Stored Keys) {#load-existing-openssh-private-key-stored-keys}
 
 For the SSH Agent you can [load existing OpenPGP](/importpgp) keys or existing OpenSSH keys in the keys tab of the OnlyKey app. To load OpenSSH key:
 
@@ -704,10 +704,10 @@ or
 onlykey-agent user@host -e rsa -sk RSA2
 ```
 
-### Setting Derived Key User Input Mode
+### Setting Derived Key User Input Mode {#setting-derived-key-user-input-mode}
 
 Currently it is not possible to display the 3 digit challenge code to user through GPG. This feature is on the roadmap. To use derived keys with GPG go to preferences in the OnlyKey app and set 'Derived Key User Input Mode' to 'Button Press Required'.
 
-### Setting Stored Key User Input Mode
+### Setting Stored Key User Input Mode {#setting-stored-key-user-input-mode}
 
 Currently it is not possible to display the 3 digit challenge code to user through GPG. This feature is on the roadmap. To use derived keys with GPG go to preferences in the OnlyKey app and set 'Stored Key User Input Mode' to 'Button Press Required'.

@@ -91,4 +91,3 @@ Your device is now set up, remove and reinsert OnlyKey to set up accounts.
 
 The wipe mode setting determines what is wiped when a factory default occurs. The default setting is to just wipe the sensitive data, there is also the option to do a "Full Wipe" which wipes sensitive data and firmware. If keeping the type and version of firmware that is loaded confidential is desired, go to preferences in the OnlyKey app and set the wipe mode of your OnlyKey to "Full Wipe". More information on this setting is available here - [Wipe Mode Feature](/usersguide#configurable-wipe-mode).
 
-{% include links.html %}

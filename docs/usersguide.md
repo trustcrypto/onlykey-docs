@@ -6,7 +6,7 @@ last_updated: Dec, 28, 2022
 keywords: "OnlyKey, User's Guide"
 ---
 
-<i class="fa fa-arrow-down fa-3x"></i>
+
 ## Start Here - Unpacking OnlyKey {#unpacking}
 
 :::callout
@@ -23,7 +23,7 @@ keywords: "OnlyKey, User's Guide"
 **Step 3.** (Optional) Check out OnlyKey accessories - [color cases](https://onlykey.io/products/onlykey-silicone-case?variant=469636644908), [mobile adapter (USB-C, Lightning)](https://onlykey.io/collections/accessories-1), [business workstation](https://onlykey.io/collections/workstation).
 :::
 
-<i class="fa fa-arrow-down fa-3x"></i> ***Proceed to setup below***
+***Proceed to setup below***
 
 ## Setting up OnlyKey {#initial-setup}
 
@@ -58,7 +58,7 @@ OnlyKey will type out instructions for you to follow into the text editor. Follo
 
  ***To use OnlyKey for password management, file encryption, and other two factor authentication methods use the steps below to install the OnlyKey app***.
 
-<i class="fa fa-arrow-down fa-3x"></i>
+
 
 ### Install OnlyKey Desktop App {#app-desktop}
 
@@ -67,17 +67,17 @@ OnlyKey will type out instructions for you to follow into the text editor. Follo
 :::
 
 
-[<i class="fa fa-apple fa-2x"></i> **macOS**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey.App.5.3.6.dmg)
+[**macOS**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey.App.5.3.6.dmg)
 
-[<i class="fa fa-windows fa-2x"></i> **Windows**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey_5.3.6.exe)
+[**Windows**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey_5.3.6.exe)
 
-[<i class="fa fa-linux fa-2x"></i> **Linux**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.5.0/OnlyKey_5.5.0_amd64.deb)
+[**Linux**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.5.0/OnlyKey_5.5.0_amd64.deb)
 
 :::note
 Linux users, if a UDEV rule has not been created previously follow the following instructions here, additionally the OnlyKey app may now be installed via snapcraft - [Linux Guide](/linux)
 :::
 
-[<i class="fa fa-chrome fa-2x"></i> **Chrome OS / Chrome App**](/app#onlykey-chrome-app)
+[**Chrome OS / Chrome App**](/app#onlykey-chrome-app)
 
 :::callout
 **Step 2.** Install and launch the app.
@@ -91,7 +91,7 @@ You can ensure the integrity of your downloaded file by verifying the checksum. 
 As you use the OnlyKey app you can hover over icons for tooltips and click on icon's to browse to that topic in the documentation ![](/assets/tooltip.png)
 :::
 
-<i class="fa fa-arrow-down fa-3x"></i> ***Proceed to OnlyKey setup below***
+***Proceed to OnlyKey setup below***
 
 ### OnlyKey Setup Using OnlyKey App {#onlykey-setup}
 
@@ -155,7 +155,7 @@ If you ever need to wipe and restore your OnlyKey DUO to factory defaults you ca
 
 You can also use the Self-destruct PIN if one has been set.
 
-<i class="fa fa-arrow-down fa-3x"></i> ***Proceed to setup accounts below***
+***Proceed to setup accounts below***
 
 ## Setting up accounts {#account-setup}
 
@@ -446,7 +446,7 @@ Chrome Extension available from the Chrome Web Store [here](https://chrome.googl
 
 ![](/assets/image21.png)
 
-<i class="fa fa-arrow-down fa-3x"></i> **Next, let's assign a OATH-TOTP secret for MFA**
+**Next, let's assign a OATH-TOTP secret for MFA**
 
 ### Configure Two Factor Authentication (2FA) {#two-factor-authentication-2fa}
 
@@ -1160,7 +1160,7 @@ If you have an issue not listed here please reference the online support forum [
 
 ## Web Links {#web-links}
 
-Documentation - [https://docs.crp.to](https://docs.crp.to)
+Documentation - [https://docs.onlykey.io](https://docs.onlykey.io)
 
 FAQs - [/faq](/faq)
 
@@ -1172,4 +1172,3 @@ Github –[ https://github.com/trustcrypto](https://github.com/trustcrypto)
 
 Getting started with OnlyKey – [https://onlykey.io/start](https://onlykey.io/start)
 
-{% include links.html %}

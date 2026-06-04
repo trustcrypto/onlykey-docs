@@ -34,7 +34,7 @@ Follow the upgrade guide [here](/upgradeguide#loading-onlykey-firmware) to updat
 
 Check out the [OnlyKey Support Forum](https://forum.onlykey.io)
 
-Check out the [OnlyKey Documentation](https://docs.crp.to)
+Check out the [OnlyKey Documentation](https://docs.onlykey.io)
 
 ## Libraries
 
@@ -63,4 +63,3 @@ For more information on export restrictions see: http://www.apache.org/licenses/
 
 [OnlyKey Firmware on Github](https://github.com/trustcrypto/OnlyKey-Firmware)
 
-{% include links.html %}

@@ -61,4 +61,3 @@ Here are the steps in a typical ransomware attack:
 The one key weakness exploited in a ransomware attack is most commonly passwords. OnlyKey stores long random passwords that are stored offline on a physical key fob. By using long random passwords ransomware is unable to crack passwords. Going a step further and using a 2-factor authentication solution like Authlite provides an even more robust solution for protection of accounts.
 
 
-{% include links.html %}

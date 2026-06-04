@@ -74,7 +74,7 @@ No secure hardware is perfect, and CryptoTrust believes that working with skille
 - Firmware signing/verification uses NACL
 - Firmware integrity verification utilizes SHA-512
 - [WebCrypt App](/webcrypt) uses NACL and AES-256-GCM for data in transit and OpenPGP for secure messages
-- [Yubico® One-Time Password](/features#Yubico-one-time-password) uses AES-128
+- [Yubico® One-Time Password](/usersguide#Yubico-one-time-password) uses AES-128
 - Challenge-response uses HMACSHA1
 
 ### Key storage
@@ -152,7 +152,7 @@ OnlyKey software is developed by a small team of trusted developers located in t
 - **2 - Leave encryption to the hardware** - Private key operations and software do not mix. Private keys are kept offline in OnlyKey hardware. For example, WebCrypt and OnlyKey SSH agent have access to only public keys and communicate with OnlyKey for all private key operations.
 - **3 - Open source & audit-able** - What you see is what you get, source available on Github.
 
-### OnlyKey Firmware {#software-app-security}
+### OnlyKey Firmware {#software-firmware-security}
 
 OnlyKey firmware is developed by a small team of trusted developers located in the USA. OnlyKey firmware is developed with specific requirements in mind, as OnlyKey is an embedded hardware device these requirements are different than traditional software development.
 
@@ -162,7 +162,7 @@ OnlyKey firmware is developed by a small team of trusted developers located in t
 
 ## Advanced
 
-### About Differences Between OnlyKey and OnlyKey DUO
+### About Differences Between OnlyKey and OnlyKey DUO {#about-differences-between-onlykey-and-onlykey-duo}
 
 1) With OnlyKey the PIN is entered on device only, with DUO it can be entered on device in a non-trusted setting but since the device only has three buttons to enter a 4,5,6 you have to long hold 1,2,3. For this reason the preferred way to enter the PIN for DUO in a trusted setting is to use the OnlyKey app to enter the PIN.
 
@@ -366,4 +366,3 @@ There is also an option to lock the backup key which ensures that the backup key
 
 ![](/assets/lockmode.png)
 
-{% include links.html %}

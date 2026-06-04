@@ -35,4 +35,3 @@ OnlyKey helps is several ways:
   - OnlyKey gives visible feedback to the user when FDE login is successful on Linux systems by using custom UDEV rule [here](https://docs.crp.to/49-onlykey-blink.rules) which makes OnlyKey blink blue after login success.
 
 
-{% include links.html %}

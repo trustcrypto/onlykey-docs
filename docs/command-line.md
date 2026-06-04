@@ -39,7 +39,7 @@ $ pip3 install onlykey
 
 ### Linux/BSD Install with dependencies
 
-In order for non-root users in Linux to be able to communicate with OnlyKey a udev rule must be created as described [here](https://docs.crp.to/linux).
+In order for non-root users in Linux to be able to communicate with OnlyKey a udev rule must be created as described [here](/linux).
 
 #### Ubuntu Install with dependencies
 ```
@@ -149,7 +149,7 @@ Configure how the OnlyKey responds to
 a factory reset. WARNING - Setting to Full Wipe mode cannot be changed.
 1 = Sensitive Data Only (default); 2 = Full Wipe (recommended for plausible deniability users) Entire device is wiped. Firmware must be reloaded. [More info](/usersguide#configurable-wipe-mode)
 
-#### keylayout [num]
+#### keylayout [num] {#keylayout}
 Set keyboard layout
   - 1 - USA_ENGLISH	(Default)
   - 2 - CANADIAN_FRENCH
@@ -476,7 +476,7 @@ Bye!
 
 ## Examples
 
-### Writing Private Keys and Passwords
+### Writing Private Keys and Passwords {#writing-private-keys-and-passwords}
 
 Keys/passwords are masked when entered and should only be set from interactive mode and not directly from terminal. Entering directly from terminal is not secure as command history is stored.
 
@@ -552,7 +552,7 @@ This can be added to scripts such as the UDEV rule to automatically set time whe
 
 **Scripted provisioning of an OnlyKey slots and keys can be done by creating a script that sets multiple values on OnlyKey**
 
-### List and Remove FIDO2 Resident Key
+### List and Remove FIDO2 Resident Key {#list-and-remove-fido2-resident-key}
 
 List current resident keys:
 
@@ -575,4 +575,3 @@ Once removed, list current resident keys to verify:
 
 [OnlyKey CLI on Github](https://github.com/trustcrypto/python-onlykey)
 
-{% include links.html %}

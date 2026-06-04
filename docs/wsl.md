@@ -57,4 +57,3 @@ usbipd wsl attach --hardware-id=1d50:60fc
 - Run any [onlykey cli](/command-line) or [onlykey-agent](/onlykey-agent) commands as described in [documententation](/index#apps)
 
 
-{% include links.html %}

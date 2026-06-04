@@ -6,7 +6,7 @@ last_updated: Dec, 28, 2022
 keywords: "OnlyKey, DUO, User's Guide"
 ---
 
-<i class="fa fa-arrow-down fa-3x"></i>
+
 ## Start Here - Unpacking OnlyKey DUO {#unpacking}
 
 :::callout
@@ -21,7 +21,7 @@ keywords: "OnlyKey, DUO, User's Guide"
 **Step 3.** (Optional) Check out OnlyKey accessories - [iPhone user's mobile adapter (Lightning)](https://onlykey.io/collections/accessories-1)
 :::
 
-<i class="fa fa-arrow-down fa-3x"></i> ***Proceed to setup below***
+***Proceed to setup below***
 
 ## Setting up OnlyKey {#initial-setup}
 
@@ -29,7 +29,7 @@ If you wish to just use your OnlyKey DUO as a FIDO security key (webauthn) then 
 
 If you wish to use your OnlyKey as a hardware password manager, enable other methods of two-factor authentication, or enable secure backup of your device setup OnlyKey DUO with the OnlyKey App.
 
-<i class="fa fa-arrow-down fa-3x"></i> ***Proceed to install app below***
+***Proceed to install app below***
 
 ### Install OnlyKey Desktop App {#app-desktop}
 
@@ -37,11 +37,11 @@ If you wish to use your OnlyKey as a hardware password manager, enable other met
 **Step 1.** Download installer
 :::
 
-[<i class="fa fa-apple fa-2x"></i> **macOS**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey.App.5.3.6.dmg)
+[**macOS**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey.App.5.3.6.dmg)
 
-[<i class="fa fa-windows fa-2x"></i> **Windows**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey_5.3.6.exe)
+[**Windows**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey_5.3.6.exe)
 
-[<i class="fa fa-linux fa-2x"></i> **Linux**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.5.0/OnlyKey_5.5.0_amd64.deb)
+[**Linux**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.5.0/OnlyKey_5.5.0_amd64.deb)
 
 :::note
 Linux users, if a UDEV rule has not been created previously follow the following instructions here, additionally the OnlyKey app may now be installed via snapcraft - [Linux Guide](/linux)
@@ -55,7 +55,7 @@ Linux users, if a UDEV rule has not been created previously follow the following
 As you use the OnlyKey app you can hover over icons for tooltips and click on icon's to browse to that topic in the documentation ![](/assets/tooltip.png)
 :::
 
-<i class="fa fa-arrow-down fa-3x"></i> ***Proceed to OnlyKey setup below***
+***Proceed to OnlyKey setup below***
 
 ### Setup Using OnlyKey App {#onlykey-setup}
 
@@ -89,7 +89,7 @@ If you ever need to wipe and restore your OnlyKey DUO to factory defaults you ca
 
 You can also use the Self-destruct PIN if one has been set.
 
-<i class="fa fa-arrow-down fa-3x"></i> ***Proceed to setup accounts below***
+***Proceed to setup accounts below***
 
 ## Setting up accounts {#account-setup}
 
@@ -109,7 +109,7 @@ OnlyKey DUO has features that can be activated by pressing/holding buttons, find
 
 **What is stored in slots?** In each slot you can set a label, static information like a password, or two-factor authentication. The label is something to help you remember what login information is stored in a slot, slots that have not been configured have no label so they are shown as ''empty''. 
 
-<i class="fa fa-arrow-down fa-3x"></i> ***Next, let's set a label to slot 1a.****
+***Next, let's set a label to slot 1a.****
 
 #### Set a Label {#set-a-label}
 
@@ -172,7 +172,7 @@ Obviously, no sensitive information should be written on card/paper or saved to 
 
 Find out more about [TOTP support on-the-go](#google-authenticator-otg) and [using OnlyKey with mobile devices (Android and iOS)](/mobile)
 
-<i class="fa fa-arrow-down fa-3x"></i> **Next, let's assign a password to slot 1a.**
+**Next, let's assign a password to slot 1a.**
 
 #### Set up a Slot (Basic Login) {#set-up-a-slot}
 
@@ -204,7 +204,7 @@ OnlyKey types your passwords for you so it will work on any device, even on mobi
 
 If you would like to learn more about setting usernames, passwords, and filling custom login forms check out [Set up a Slot (Advanced Login)](#set-up-a-slot-advanced)
 
-<i class="fa fa-arrow-down fa-3x"></i> **Next, let's use two different methods to generate strong uncrackable passwords.**
+**Next, let's use two different methods to generate strong uncrackable passwords.**
 
 #### Generate Strong Passwords Online {#generate-strong-passwords-online}
 
@@ -225,7 +225,7 @@ Chrome Extension available from the Chrome Web Store [here](https://chrome.googl
 
 ![](/assets/image21.png)
 
-<i class="fa fa-arrow-down fa-3x"></i> **Next, let's assign a OATH-TOTP secret for MFA**
+**Next, let's assign a OATH-TOTP secret for MFA**
 
 ### Configure Two Factor Authentication (2FA) {#two-factor-authentication-2fa}
 
@@ -1107,7 +1107,7 @@ If you have an issue not listed here please reference the online support forum [
 
 ## Web Links {#web-links}
 
-Documentation - [https://docs.crp.to](https://docs.crp.to)
+Documentation - [https://docs.onlykey.io](https://docs.onlykey.io)
 
 FAQs - [/faq](/faq)
 
@@ -1119,4 +1119,3 @@ Github –[ https://github.com/trustcrypto](https://github.com/trustcrypto)
 
 Getting started with OnlyKey – [https://onlykey.io/duo](https://onlykey.io/duo)
 
-{% include links.html %}

@@ -7,65 +7,42 @@ keywords: homepage
 
 ## Get Started With OnlyKey
 
-<div class="row">
-         <div class="col-md-3 col-sm-6">
-             <div class="panel panel-default text-center">
-                 <div class="panel-heading">
-                     <span class="fa-stack fa-5x">
-                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                           <i class="fa fa-sign-in fa-stack-1x fa-inverse"></i>
-                     </span>
-                 </div>
-                 <div class="panel-body">
-                     <p>The first step in getting started with OnlyKey is to follow the <a href="https://onlykey.io/start">steps here</a>. This will ensure you stay up to date on important OnlyKey updates.</p>
-                     <a href="https://onlykey.io/start" class="btn btn-primary">Start Here</a>
-                 </div>
-             </div>
-         </div>
-         <div class="col-md-3 col-sm-6">
-             <div class="panel panel-default text-center">
-                 <div class="panel-heading">
-                     <span class="fa-stack fa-5x">
-                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                           <i class="fa fa-book fa-stack-1x fa-inverse"></i>
-                     </span>
-                 </div>
-                 <div class="panel-body">
-                     <p>The users's guide for OnlyKey and OnlyKey DUO provide step-by-step instructions for configuring and using device.</p>
-                     <a href="/usersguide" class="btn btn-primary">User's Guide</a>
-                     <a href="/duousersguide" class="btn btn-primary">DUO User's Guide</a>
-                 </div>
-             </div>
-         </div>
-         <div class="col-md-3 col-sm-6">
-             <div class="panel panel-default text-center">
-                 <div class="panel-heading">
-                     <span class="fa-stack fa-5x">
-                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                           <i class="fa fa-database fa-stack-1x fa-inverse"></i>
-                     </span>
-                 </div>
-                 <div class="panel-body">
-                     <p>The Knowledge Base contains guides and information for using OnlyKey in specific applications.</p>
-                     <a href="#knowledge-base" class="btn btn-primary">Knowledge Base</a>
-                 </div>
-             </div>
-         </div>
-         <div class="col-md-3 col-sm-6">
-             <div class="panel panel-default text-center">
-                 <div class="panel-heading">
-                     <span class="fa-stack fa-5x">
-                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                           <i class="fa fa-support fa-stack-1x fa-inverse"></i>
-                     </span>
-                 </div>
-                 <div class="panel-body">
-                     <p>If you are having issues that are not addressed in the <a href="/usersguide">OnlyKey User's Guide</a>, <a href="/duousersguide">OnlyKey DUO User's Guide</a>, or <a href="/faq">FAQs</a> check out the <a href="https://forum.onlykey.io">OnlyKey Support forum</a>.</p>
-                     <a href="https://forum.onlykey.io" class="btn btn-primary">Support</a>
-                 </div>
-             </div>
-         </div>
-</div>
+::: grids
+
+::: grid
+::: card Start Here
+The first step in getting started with OnlyKey is to follow the [steps here](https://onlykey.io/start). This will ensure you stay up to date on important OnlyKey updates.
+
+::: button "Start Here" https://onlykey.io/start primary
+:::
+:::
+
+::: grid
+::: card User's Guide
+The user's guides for OnlyKey and OnlyKey DUO provide step-by-step instructions for configuring and using the device.
+
+::: button "User's Guide" /usersguide primary
+::: button "DUO User's Guide" /duousersguide primary
+:::
+:::
+
+::: grid
+::: card Knowledge Base
+The Knowledge Base contains guides and information for using OnlyKey in specific applications.
+
+::: button "Knowledge Base" /#knowledge-base primary
+:::
+:::
+
+::: grid
+::: card Support
+If you are having issues that are not addressed in the [OnlyKey User's Guide](/usersguide), [OnlyKey DUO User's Guide](/duousersguide), or [FAQs](/faq), check out the [OnlyKey Support forum](https://forum.onlykey.io).
+
+::: button "Support" https://forum.onlykey.io primary
+:::
+:::
+
+:::
 
 ### OnlyKey Apps and Software {#apps}
 
@@ -107,4 +84,3 @@ The Knowledge Base contains guides and information for using OnlyKey in specific
 
 **[Plausible Deniability Setup Guide](/pdguide)** - Follow this guide to use the plausible deniability feature of OnlyKey
 
-{% include links.html %}

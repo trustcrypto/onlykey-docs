@@ -43,7 +43,7 @@ onlykey-agent users, make sure to install the latest version of onlykey-agent wi
 
 ### Steps to Upgrade OnlyKey firmware {#loading-onlykey-firmware}
 
-### Download Firmware
+### Download Firmware {#download-firmware}
 
 There is a tab named Firmware in the app. This may be used to load the latest firmware onto OnlyKey directly through the OnlyKey app.
 
@@ -66,4 +66,3 @@ f895100a2f828b66ec5335fd676ef659daf87d51bfeecca5fb8bf9b7c8e259bd
 For more information on the latest firmware release [here](https://github.com/trustcrypto/OnlyKey-Firmware/releases/latest/)
 -->
 
-{% include links.html %}

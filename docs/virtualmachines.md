@@ -36,4 +36,3 @@ Or to have OnlyKey automatically connect to the VM whenever the VM is powered on
 - Select "CRYPTOTRUST ONLYKEY"
 - Remove and reinsert OnlyKey to connect it to the VM
 
-{% include links.html %}

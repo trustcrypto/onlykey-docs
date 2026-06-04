@@ -72,4 +72,3 @@ Pick from the list below to find out more about common solutions that integrate 
 
 This list includes many common solutions but OnlyKey will work with practically any service or application. If a site supports 2FA then chances are OnlyKey is supported, if a site does not support 2FA then OnlyKey is still supported for secure passwords.
 
-{% include links.html %}

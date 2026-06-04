@@ -116,4 +116,3 @@ If you have already registered OnlyKey as a security key for a website on deskto
 :::
 
 
-{% include links.html %}
