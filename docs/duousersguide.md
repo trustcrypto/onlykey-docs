@@ -8,16 +8,10 @@ keywords: "OnlyKey, DUO, User's Guide"
 
 ## Start Here - Unpacking OnlyKey DUO {#unpacking}
 
-:::callout
-**Step 1.** Remove the OnlyKey and the metal quick-connect keychain from packaging.
-:::
-
-:::callout
-**Step 2.** Attach the quick-connect to the OnlyKey, the other end of the quick-connect can be attached to your keyring.
-:::
-
-:::callout
-**Step 3.** (Optional) Check out OnlyKey accessories - [iPhone user's mobile adapter (Lightning)](https://onlykey.io/collections/accessories-1)
+::: steps
+1. Remove the OnlyKey and the metal quick-connect keychain from packaging.
+2. Attach the quick-connect to the OnlyKey; the other end of the quick-connect can be attached to your keyring.
+3. (Optional) Check out OnlyKey accessories — [iPhone user's mobile adapter (Lightning)](https://onlykey.io/collections/accessories-1).
 :::
 
 ***Proceed to setup below***
@@ -36,14 +30,15 @@ If you wish to use your OnlyKey as a hardware password manager, enable other met
 **Step 1.** Download installer
 :::
 
-[**macOS**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey.App.5.3.6.dmg)
+::: tabs
+== tab macOS
+[**Download for macOS**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey.App.5.3.6.dmg)
+== tab Windows
+[**Download for Windows**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey_5.3.6.exe)
+== tab Linux
+[**Download for Linux**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.5.0/OnlyKey_5.5.0_amd64.deb)
 
-[**Windows**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.3.6/OnlyKey_5.3.6.exe)
-
-[**Linux**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.5.0/OnlyKey_5.5.0_amd64.deb)
-
-:::note
-Linux users, if a UDEV rule has not been created previously follow the following instructions here, additionally the OnlyKey app may now be installed via snapcraft - [Linux Guide](/linux)
+If a UDEV rule has not been created previously, follow the instructions [here](/linux). The OnlyKey app may also be installed via snapcraft - [Linux Guide](/linux).
 :::
 
 :::callout
@@ -58,27 +53,17 @@ As you use the OnlyKey app you can hover over icons for tooltips and click on ic
 
 ### Setup Using OnlyKey App {#onlykey-setup}
 
-:::callout
-**Step 1.** Insert OnlyKey DUO
+::: steps
+1. Insert OnlyKey DUO. If you would like to set advanced features such as a device PIN, select the advanced checkbox.
+
+   ![](/assets/config1-duo.png)
+2. Select [Next] and follow the instructions to enter a backup passphrase.
+
+   ![](/assets/setup7-2.png)
+3. If you have an OnlyKey backup to restore, select [Choose File], select your OnlyKey backup file, and then select [Next] to load it onto your OnlyKey. If you do not have a backup, just select [Next] to complete the setup.
+
+   ![](/assets/setup10.png)
 :::
-
-:::tip "💡 Pro Tip"
-If you would like to set advanced features such as a device PIN, select the advanced checkbox
-:::
-
-![](/assets/config1-duo.png)
-
-:::callout
-**Step 2.** Select [Next] and follow the instructions to enter a backup passphrase
-:::
-
-![](/assets/setup7-2.png)
-
-:::callout
-**Step 3.** If you have an OnlyKey backup to restore, select [Choose File] and select your OnlyKey backup file and then select [Next] to load it onto your OnlyKey. If you do not have a backup just select [Next] to complete the setup.
-:::
-
-![](/assets/setup10.png)
 
 Your device is now set up and will automatically reboot. 
 
