@@ -411,6 +411,18 @@ Two-factor authentication (2FA) is essentially an extra step that is required du
 3) [Yubico® One-Time Password](#Yubico-one-time-password)<br>
 4) [Challenge-Response](#challenge-response)
 
+Not sure which method to use? This decision guide can help — pick the most secure option the site supports:
+
+```mermaid
+flowchart TD
+  Q1{"Site supports Security Key / FIDO2 / WebAuthn?"} -- Yes --> SK["Use Security Key (FIDO2 / U2F) — most phishing-resistant"]
+  Q1 -- No --> Q2{"Site supports an authenticator app (OATH-TOTP)?"}
+  Q2 -- Yes --> TOTP["Use OATH TOTP (Google Authenticator)"]
+  Q2 -- No --> Q3{"Site supports Yubico OTP?"}
+  Q3 -- Yes --> YOTP["Use Yubico One-Time Password"]
+  Q3 -- No --> CR["Use Challenge-Response or a stored password"]
+```
+
 #### OATH TOTP (Google Authenticator) {#google-authenticator-totp}
 
 *DISCLAIMER - Google® is the registered trademarks of Google Inc. OnlyKey is not associated with or sponsored by Google® Inc.*
@@ -921,6 +933,20 @@ To use OnlyKey WebCrypt or OnlyKey Agent with your own OpenPGP keys ([stored key
 ## Secure Encrypted Backup Anywhere {#secure-encrypted-backup-anywhere}
 
 The Secure Encrypted Backup Anywhere feature allows you to backup OnlyKey on the go. The way that this works is that the OnlyKey encrypts everything on your OnlyKey using an encryption key and then types it out. This allows saving the backup in a text file or email on any computer.
+
+```mermaid
+flowchart LR
+  subgraph Backup
+    A["Hold button #1 (physical press)"] --> B["OnlyKey encrypts everything with passphrase or PGP key"]
+    B --> C["Encrypted backup typed out as text"]
+    C --> D["Save anywhere: text file or email"]
+  end
+  subgraph Restore
+    E["Load backup file into OnlyKey App"] --> F["Same passphrase / PGP key decrypts it"]
+    F --> G["OnlyKey restored (new or replacement device)"]
+  end
+  D -.-> E
+```
 
 ### Backup With OnlyKey App {#backup-with-onlykey-app}
 

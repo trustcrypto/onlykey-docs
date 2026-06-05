@@ -110,7 +110,7 @@ OnlyKey backup files are encrypted and without the passphrase or PGP key they ca
 
 ### Reflashing the OnlyKey with malicious firmware
 
-OnlyKey may only load firmware signed by CryptoTrust LLC. Developer model devices may be purchased to load test firmware. Firmware integrity is also verified every time the device boots; if verification fails the device is wiped and signed firmware must be reloaded.
+OnlyKey may only load firmware signed by CryptoTrust LLC. Firmware integrity is also verified every time the device boots; if verification fails the device is wiped and signed firmware must be reloaded.
 
 ```mermaid
 flowchart TD
@@ -208,6 +208,19 @@ The following steps occur during initial setup to generate the key used to encry
 - The public keys pinhashpub and pinhashpub2 (if 2nd profile) are stored in locked flash
 
 All sensitive data on OnlyKey is encrypted with this AES-256 profilekey and IVs change based on the slot/type of data being encrypted.
+
+The high-level key-derivation chain looks like this:
+
+```mermaid
+flowchart TD
+  A["User enters PIN"] --> B["SHA-256(PIN + nonce1) = pinhashpriv"]
+  B --> C["Curve25519 shared secret = kek1"]
+  C --> D["SHA-256(kek1 + nonce2 + nonce1 + chip ID) = kek2"]
+  D --> E["AES-256-GCM decrypts profilekey (random 32-byte key)"]
+  E --> F["profilekey decrypts all slots and keys stored at rest"]
+```
+
+Because the decryption key is derived from the PIN plus random values held in separate locked hardware (nonce1 in flash, nonce2 in EEPROM, chip ID in ROM), the data cannot be decrypted without both the correct PIN and the original device.
 
 - A random 32 byte number is generated, this is the default ECC key used for key derivation
 - This ECC key is stored in ECC key slot 32
