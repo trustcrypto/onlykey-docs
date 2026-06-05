@@ -46,7 +46,7 @@ If you are having issues that are not addressed in the [OnlyKey User's Guide](/u
 
 ### OnlyKey Apps and Software {#apps}
 
-**[OnlyKey Desktop App](/app)** is used for setup and configuration of OnlyKey. Supported on Windows, macOS, Linux, and Chrome OS (with Chrome App).
+**[OnlyKey Desktop App](/app)** is used for setup and configuration of OnlyKey. Supported on Windows, macOS, and Linux.
 
 **[OnlyKey WebCrypt](/webcrypt)** provides a way to securely use OnlyKey in the browser. The Webcrypt app loads everything necessary to encrypt messages and files directly in the local browser without the need to send messages or files over the Internet. Data between [OnlyKey](https://onlykey.io) and the local browser is end-to-end encrypted. WebCrypt integrates with services like [Keybase](https://keybase.io/) and [Protonmail](https://protonmail.com) to provide OpenPGP encryption and key management everywhere on-the-go. Supports browsers Chrome, Chromium/Brave, and Firefox. Supports Windows, Mac, Linux, Android and iOS.
 

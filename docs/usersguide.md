@@ -32,13 +32,6 @@ Prefer a how-to video? Watch one [here](https://vimeo.com/967163806) that demons
 Quick setup is an alternative way to set up a new OnlyKey with no apps required. However, a computer with a US layout keyboard is required and to take advantage of many of the OnlyKey features the OnlyKey app is required.
 :::
 
-:::tip "💡 Pro Tip"
-Prefer a how-to video? Watch one [here](https://vimeo.com/372991865) that demonstrates setting up a new OnlyKey with Quick Setup
-
-::: embed https://vimeo.com/372991865
-
-:::
-
 To complete OnlyKey quick setup follow the instructions below:
 
 - Open a text editor such as Notepad (Windows) or TextEdit (Mac) on a trusted computer
@@ -71,8 +64,6 @@ OnlyKey will type out instructions for you to follow into the text editor. Follo
 [**Download for Linux**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.5.0/OnlyKey_5.5.0_amd64.deb)
 
 If a UDEV rule has not been created previously, follow the instructions [here](/linux). The OnlyKey app may also be installed via snapcraft - [Linux Guide](/linux).
-== tab Chrome OS / Chrome App
-See the [OnlyKey Chrome App](/app#onlykey-chrome-app) section.
 :::
 
 :::callout
