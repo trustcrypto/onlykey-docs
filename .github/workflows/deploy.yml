@@ -34,9 +34,12 @@ jobs:
         id: base
         run: |
           REPO="${{ github.event.repository.name }}"
-          # User/org pages (<name>.github.io) serve at the domain root; project
-          # pages serve under /<repo>/. docmd reads this via DOCMD_PROJECT_PREFIX.
-          if [[ "$REPO" == *.github.io ]]; then
+          # A custom domain (CNAME present) serves at the domain root → base "/".
+          # User/org pages (<name>.github.io) also serve at root.
+          # Project pages serve under /<repo>/. docmd reads this via DOCMD_PROJECT_PREFIX.
+          if [[ -f CNAME ]]; then
+            echo "prefix=/" >> "$GITHUB_OUTPUT"
+          elif [[ "$REPO" == *.github.io ]]; then
             echo "prefix=/" >> "$GITHUB_OUTPUT"
           else
             echo "prefix=/$REPO/" >> "$GITHUB_OUTPUT"
@@ -49,6 +52,9 @@ jobs:
         env:
           DOCMD_PROJECT_PREFIX: ${{ steps.base.outputs.prefix }}
         run: npx @docmd/core build
+
+      - name: Preserve custom domain (CNAME)
+        run: if [ -f CNAME ]; then cp CNAME site/CNAME; fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
