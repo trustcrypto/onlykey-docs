@@ -44,8 +44,6 @@ There is also a portable version [here](https://github.com/trustcrypto/OnlyKey-A
 [**Download for Linux**](https://github.com/trustcrypto/OnlyKey-App/releases/download/v5.5.0/OnlyKey_5.5.0_amd64.deb)
 
 If a UDEV rule has not been created previously, follow the instructions [here](/linux). The OnlyKey app may also be installed via snapcraft - [Linux Guide](/linux).
-== tab ChromeOS / ARM
-See the [OnlyKey Chrome App](/app#onlykey-chrome-app) section below.
 :::
 
 :::callout
@@ -60,7 +58,11 @@ If you have an OnlyKey to set up, once you have installed the app proceed to [On
 
 ### OnlyKey Chrome App {#onlykey-chrome-app}
 
-The Chrome app has limited features and should only be used where the desktop app is unavailable such as on ChromeOS or unsupported ARM based operating systems. 
+:::warning "⚠️ No Longer Supported"
+The OnlyKey Chrome App is **deprecated**. Google has ended support for Chrome Apps — ChromeOS 138 (July 2025) was the last ChromeOS release that supported user-installed Chrome apps, and Chrome Apps were removed from desktop Chrome, Chromium, Brave, and Edge in earlier releases. Use the desktop OnlyKey App for macOS, Windows, or Linux instead. The instructions below are retained for reference only.
+:::
+
+The Chrome app has limited features and was only intended for use where the desktop app is unavailable, such as on ChromeOS or unsupported ARM based operating systems. 
 
 ### ChromeOS
 

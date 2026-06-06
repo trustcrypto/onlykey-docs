@@ -38,18 +38,9 @@ $ snap install --beta --devmode onlykey-app
 
 At time of writing, an issue is open with snapcraft to allow USB permissions, this requires manual approval from snapcraft. Once this is complete the app can be installed without dev-mode. Additional alternatives are mentioned below:
 
-**Install Brave/Chromium Browser**
-The app is also available as a Chrome app which is supported in Brave and Chromium browsers:
-
-Follow instructions here to install [Brave browser](https://brave-browser.readthedocs.io/en/latest/installing-brave.html#linux)
-
-Launch Brave browser
-
-```
-$ brave-browser
-```
-
-Click [here](https://chrome.google.com/webstore/detail/onlykey-configuration/adafilbceehejjehoccladhbkgbjmica) to browse to the OnlyKey Configuration app on the Chrome Web Store and select 'Add to Chrome'
+:::warning "⚠️ Chrome App Deprecated"
+The OnlyKey app was previously also available as a Chrome app for Brave/Chromium browsers, but Google has ended support for Chrome Apps, so this option is no longer available. Use one of the methods above (`.deb` or snapcraft) or the **Extract and run directly** method below instead.
+:::
 
 **Extract and run directly**
 As an alternative you may also extract the .DEB and run the application directly:
