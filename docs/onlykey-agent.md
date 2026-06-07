@@ -395,7 +395,7 @@ If you wish to switch back to your software keys unset GNUPGHOME.
 
 4) Log out and back into your session to ensure your environment is updated everywhere.
 
-## Installation
+## Installation {#installation}
 
 ::: tabs
 == tab Windows
