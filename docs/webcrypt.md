@@ -28,6 +28,12 @@ WebCrypt integrates with services like [Keybase](https://keybase.io/) and [Proto
 
 [Decrypt Messages](https://apps.crp.to/decrypt)
 
+:::tip "💡 Pro Tip"
+WebCrypt 3.0 Demo [here](https://vimeo.com/505377733) that demonstrates using OnlyKey WebCrypt for file encryption
+
+::: embed https://vimeo.com/505377733
+
+:::
 
 ## How it works
 

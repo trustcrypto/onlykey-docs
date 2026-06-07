@@ -58,6 +58,12 @@ Only generate keys on a computer that you trust (i.e. never a publicly accessibl
 Only generate keys on a computer that you trust (i.e. never a publicly accessible or shared workstation).
 :::
 
+:::tip "💡 Pro Tip"
+Prefer a how-to video? Watch one [here](https://vimeo.com/374512727)
+
+::: embed https://vimeo.com/374512727
+
+:::
 
 :::callout
 **Step 1.** Go to https://keybase.io
