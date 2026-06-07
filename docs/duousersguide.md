@@ -1025,7 +1025,7 @@ FAQs - [/faq](/faq)
 
 Forum -[ https://forum.onlykey.io](https://forum.onlykey.io)
 
-Store –[ https://crp.to/ok](https://crp.to/ok)
+Store –[ https://onlykey.io/products](https://onlykey.io/products)
 
 Github –[ https://github.com/trustcrypto](https://github.com/trustcrypto)
 

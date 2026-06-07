@@ -125,9 +125,9 @@ You can also use the Self-destruct PIN if one has been set.
 
 :::tip "💡 Pro Tip"
 Set aside some time to set up accounts as this can be time consuming the first time you set it up. After you configure your profiles once you won't have to do this again unless you add a new account. Think of all the time you will save not having to remember and type usernames, passwords, and getting your phone out to type codes etc. This is a huge time saver in the long run.<br><br>
-Prefer a how-to video? Watch one [here](https://vimeo.com/372894554) that demonstrates setting up a new OnlyKey
+Prefer a how-to video? Watch one [here](https://vimeo.com/967163806) that demonstrates setting up a new OnlyKey
 
-::: embed https://vimeo.com/372894554
+::: embed https://vimeo.com/967163806
 
 :::
 
@@ -1088,7 +1088,7 @@ FAQs - [/faq](/faq)
 
 Forum -[ https://forum.onlykey.io](https://forum.onlykey.io)
 
-Store –[ https://crp.to/ok](https://crp.to/ok)
+Store –[ https://onlykey.io/products](https://onlykey.io/products)
 
 Github –[ https://github.com/trustcrypto](https://github.com/trustcrypto)
 
