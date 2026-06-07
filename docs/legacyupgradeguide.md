@@ -29,11 +29,11 @@ If you are a new OnlyKey user just complete steps 2 and 3 below as you won't hav
 :::
 
 :::callout
-**Step 4.** **Setup OnlyKey** - Follow instructions [here](#onlykey-setup) to setup OnlyKey and restore from backup
+**Step 4.** **Setup OnlyKey** - Follow instructions [here](/usersguide#onlykey-setup) to setup OnlyKey and restore from backup
 :::
 
 :::callout
-**Step 4.** **Check out the new features [here](#new-features)**
+**Step 5.** **Check out the new features [here](#new-features)**
 :::
 
 ### Steps to Upgrade OnlyKey firmware {#loading-onlykey-firmware}
@@ -156,9 +156,9 @@ If your OnlyKey has a case on it you can just slip the two corners out of the ca
 
 ### Install OnlyKey Desktop App {#app-desktop}
 
-Follow instructions here - [OnlyKey App Install](#onlykey-setup)
+Follow instructions here - [OnlyKey App Install](/app)
 
-### In App Firmware Updates
+### In App Firmware Updates {#new-features}
 
 You may notice now that there is an option in the app to load firmware when setting up a device. There is also a tab named Firmware in the app. This may be used to load the latest firmware onto OnlyKey directly through the app, no backup/restore or wiping is required. Firmware updates are securely signed using a simple blockchain and verified by on the OnlyKey.
 ![](/assets/newfeature2.png)

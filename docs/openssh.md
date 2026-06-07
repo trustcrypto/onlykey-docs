@@ -88,7 +88,7 @@ Relying Party       Username            Credential ID
 ssh:                openssh             F6pS8iFTMI9ezUZRMD39pMgC3CMpEwVCq9Y6O8YEc3lNGuMGEOihYhFZYP4ewiPmUpyfS26AIA3LXlwyHIrx4rG/fR67AA==
 ```
 
-## Prerequisites
+## Prerequisites {#prerequisites}
 
 ### Windows
 Follow the install guide [here](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) and install "OpenSSH Client"
