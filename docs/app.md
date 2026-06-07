@@ -10,7 +10,7 @@ keywords: OnlyKey, App
 
 This is the official app for **OnlyKey**
 
-OnlyKey can be purchased here: [OnlyKey order](http://www.crp.to/p/)
+OnlyKey can be purchased here: [OnlyKey order](https://onlykey.io/products)
 
 ## About
 
