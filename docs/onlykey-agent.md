@@ -415,25 +415,34 @@ $ pip3 install onlykey-agent
 == tab Linux / BSD
 Non-root users in Linux need a udev rule — see [Linux UDEV Rule](/linux).
 
-#### Ubuntu
+#### Ubuntu / Debian
+
+:::note
+Since Debian 12 "bookworm" and Ubuntu 23.04, the system Python is marked externally-managed ([PEP 668](https://peps.python.org/pep-0668/)), so installing into the system Python with `pip3 install onlykey-agent` is blocked. Install with **pipx** (recommended) or inside a **virtual environment** instead. Other distributions that enforce PEP 668 should follow the same approach.
+:::
+
+**Option A — pipx (recommended)**
 ```
 $ sudo apt update && sudo apt upgrade
-$ sudo apt install python3-pip python3-tk libusb-1.0-0-dev libudev-dev
-$ pip3 install onlykey-agent
+$ sudo apt install pipx python3-tk libusb-1.0-0-dev libudev-dev
+$ pipx install --system-site-packages onlykey-agent
+$ pipx ensurepath
 $ wget https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/49-onlykey.rules
 $ sudo cp 49-onlykey.rules /etc/udev/rules.d/
 $ sudo udevadm control --reload-rules && udevadm trigger
 ```
 
-#### Debian
+**Option B — virtual environment (venv)**
 ```
 $ sudo apt update && sudo apt upgrade
-$ sudo apt install python3-pip python3-tk libusb-1.0-0-dev libudev-dev
-$ pip3 install onlykey-agent
+$ sudo apt install python3-pip python3-venv python3-tk libusb-1.0-0-dev libudev-dev
+$ python3 -m venv ~/onlykey-venv
+$ ~/onlykey-venv/bin/pip3 install onlykey-agent
 $ wget https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/49-onlykey.rules
 $ sudo cp 49-onlykey.rules /etc/udev/rules.d/
 $ sudo udevadm control --reload-rules && udevadm trigger
 ```
+With venv, run the agent as `~/onlykey-venv/bin/onlykey-agent` (or `source ~/onlykey-venv/bin/activate` first, then use `onlykey-agent` directly).
 
 #### RedHat
 ```

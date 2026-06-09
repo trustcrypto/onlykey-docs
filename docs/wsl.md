@@ -42,9 +42,14 @@ OnlyKey is supported on WSL2 by following the steps described in the Microsoft a
 **Manual Setup**
 
 - Powershell commands to update Ubuntu and install OnlyKey dependencies
+
+:::note
+WSL uses Ubuntu, so on current releases the system Python is externally-managed ([PEP 668](https://peps.python.org/pep-0668/)). The commands below install `onlykey-agent` with **pipx** instead of a system `pip3 install`.
+:::
+
 ```
 > Start-Process bash -ArgumentList '-c "sudo apt update && sudo apt upgrade -y"' -Wait 
-> Start-Process bash -ArgumentList '-c "sudo apt install python3-pip python3-tk libusb-1.0-0-dev libudev-dev linux-tools-5.4.0-77-generic hwdata -y && pip3 install onlykey-agent && wget https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/49-onlykey.rules && sudo cp 49-onlykey.rules /etc/udev/rules.d"' -Wait
+> Start-Process bash -ArgumentList '-c "sudo apt install python3-pip python3-tk libusb-1.0-0-dev libudev-dev linux-tools-5.4.0-77-generic hwdata pipx -y && pipx install --system-site-packages onlykey-agent && pipx ensurepath && wget https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/49-onlykey.rules && sudo cp 49-onlykey.rules /etc/udev/rules.d"' -Wait
 > Start-Process bash -ArgumentList '-c "sudo update-alternatives --install /usr/local/bin/usbip usbip /usr/lib/linux-tools/5.4.0-77-generic/usbip 20"' -Wait
 ```
 
