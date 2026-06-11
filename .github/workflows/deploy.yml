@@ -53,6 +53,11 @@ jobs:
           DOCMD_PROJECT_PREFIX: ${{ steps.base.outputs.prefix }}
         run: npx @docmd/core build
 
+      - name: Generate legacy .html redirect stubs
+        # The old Jekyll site served /<page>.html; docmd serves /<page>/.
+        # Emit redirect stubs so old inbound .html links keep working.
+        run: node scripts/generate-redirects.mjs site
+
       - name: Preserve custom domain (CNAME)
         run: if [ -f CNAME ]; then cp CNAME site/CNAME; fi
 
