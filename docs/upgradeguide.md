@@ -37,7 +37,7 @@ Please read these before upgrading:
 
 - **Web app:** firmware 3.1.0 uses [apps.onlykey.io](https://apps.onlykey.io). OnlyKeys on firmware 3.0.4 or older keep using apps.crp.to.
 - **One firmware edition:** the International Travel Edition has been removed in 3.1.0.
-- **Second profile:** the OnlyKey App no longer offers the plausible deniability profile; a second profile is encrypted with its own PIN. An OnlyKey that already uses plausible deniability keeps working after the upgrade.
+- **Second profile:** plausible deniability can no longer be set up; a second profile is encrypted with its own PIN. An OnlyKey that already uses plausible deniability keeps working after the upgrade.
 - **OnlyKey and OnlyKey DUO** use the same firmware file.
 - **SSH/GPG derived keys** created with onlykey-agent stay the same after the upgrade.
 - **python-onlykey 1.3.1** (onlykey-cli) needs Python 3.10 or newer.
