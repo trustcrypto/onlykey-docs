@@ -87,7 +87,7 @@ There is a tab named Firmware in the app. This is used to load the latest firmwa
 
 :::note
 You can ensure the integrity of your downloaded file by verifying the checksum. <br>Signed_OnlyKey_3_1_0_STD.txt SHA 256 checksum:<br>
-dfb123f10f8cf1bb300ddb48776696bcddb1ba79167a0e495279b2eddfb8c83a
+b391eab93a4e3faed9d2969cc279694a90d4a1063126fb4b2f3d12908a69ed4a
 :::
 
 For more information on this release see the [OnlyKey firmware 3.1.0 release notes](https://github.com/trustcrypto/OnlyKey-Firmware/releases/tag/v3.1.0-prod).
