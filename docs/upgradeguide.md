@@ -55,6 +55,8 @@ If your OnlyKey has firmware v0.2-beta.8 or earlier you must back up OnlyKey bef
 
 :::callout
 **Step 2.** **Install OnlyKey App 6.0.0** - Download it from the [OnlyKey App releases](https://github.com/trustcrypto/OnlyKey-App/releases/latest) or follow the instructions [here](/usersguide#app-desktop).
+
+**macOS, if your previous OnlyKey App was set to open at login:** after installing 6.0.0, open System Settings → General → Login Items & Extensions. Under **Open at Login**, select the old "OnlyKey App" entry and click **–** to remove it. Otherwise the old entry can open the app full screen when you log in. To start the new app at login, turn the option on again in the OnlyKey App.
 :::
 
 :::callout
