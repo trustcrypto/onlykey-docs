@@ -2,7 +2,7 @@
 title: Using OnlyKey with Mobile Devices (iPhone and Android)
 description: How do I use OnlyKey with mobile devices like iPhone and Android?
 slug: mobile
-last_updated: Oct, 01, 2021
+last_updated: Nov, 25, 2026
 keywords: OnlyKey, Android, mobile, iPhone, iOS
 ---
 
@@ -52,7 +52,7 @@ Built-in Mobile Biometric 2FA Works Together with OnlyKey <br>OnlyKey can be use
 
 Since the OnlyKey is essentially detected by mobile device as a keyboard, the username / password / Yubikey® OTP login features will work.
 
-The TOTP feature requires the correct time in order to generate correct codes. In order to set the time on OnlyKey browse to https://apps.crp.to from Chrome or Firefox in Android (Safari in iOS) before trying to login.
+The TOTP feature requires the correct time in order to generate correct codes. In order to set the time on OnlyKey browse to https://apps.onlykey.io (firmware 3.1.0; https://apps.crp.to for firmware 3.0.4 or older) from Chrome or Firefox in Android (Safari in iOS) and select **Set Time for OTP 2FA** before trying to login.
 
 ### Using OnlyKey as a Security Key on Android
 
@@ -74,7 +74,7 @@ This is currently supported using Firefox and Chrome browsers for Android. To us
 
 - Plug OnlyKey into mobile device using adapter
 - Enter PIN to unlock OnlyKey
-- Browse to https://apps.crp.to/encrypt-file
+- Browse to https://apps.onlykey.io/app/encrypt-file (firmware 3.1.0) or https://apps.crp.to/encrypt-file (firmware 3.0.4 or older)
 - A pop-up will appear that you must accept for the device to communicate with OnlyKey
 - If OnlyKey is correctly connected a message will show "OnlyKey v0.2-beta.8c Secure Connection Established"
 - Enter your Keybase username and the recipient's username (if you are encrypting files for yourself this is your username)
@@ -90,7 +90,7 @@ The challenge code is an added security feature, if ease of use is the priority 
 
 - Plug OnlyKey into mobile device using adapter
 - Enter PIN to unlock OnlyKey
-- Browse to https://apps.crp.to/decrypt-file
+- Browse to https://apps.onlykey.io/app/decrypt-file (firmware 3.1.0) or https://apps.crp.to/decrypt-file (firmware 3.0.4 or older)
 - A pop-up will appear that you must accept for the device to communicate with OnlyKey
 - If OnlyKey is correctly connected a message will show "OnlyKey v0.2-beta.8c Secure Connection Established"
 - Enter your Keybase username

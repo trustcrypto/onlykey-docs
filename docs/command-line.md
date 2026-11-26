@@ -1,19 +1,33 @@
 ---
 title: OnlyKey Command-Line Utility
-description: The OnlyKey Command-Line Utility is a command line interface to OnlyKey.
+description: The OnlyKey Command-Line Utility (onlykey-cli, python-onlykey 1.3.1) is a command line interface to OnlyKey, including post-quantum keys and the age plugin.
 slug: command-line
-last_updated: Jan, 19, 2022
-keywords: OnlyKey, Command line
+last_updated: Nov, 25, 2026
+keywords: OnlyKey, Command line, onlykey-cli, python-onlykey, age, post-quantum
 ---
 
 # onlykey-cli
 
 OnlyKey-cli - A command line interface to the OnlyKey (Similar functionality to [OnlyKey App](/app)) that can be used for configuration, scripting, and testing.
 
+:::note
+**python-onlykey 1.3.1** is the release for OnlyKey firmware 3.1.0. It needs Python 3.10 or newer and adds:
+
+- [Post-quantum keys](/pqc): ML-KEM-768 and X-Wing key types for `setkey` and `genkey`, composite PQC PGP keys with `loadpqc`, and the `signpqc` and `decryptpqc` device operations
+- [age-plugin-onlykey](/age), with derived and stored X-Wing keys
+- The firmware 3.1.0 settings `storedkeymode`, `derivedkeymode`, `webderivemode` and `webcryptpolicy` ([user input modes](/user-input-modes)), and `capabilities`
+
+`setpqc` and `2ndprofilemode` have been removed: use `loadpqc` (or `setkey PQC1-PQC4 p`) instead of `setpqc`. A second profile is always encrypted with its own PIN.
+:::
+
 ## Installation
 
 ::: tabs
 == tab Windows
+:::note
+The stand-alone EXE is onlykey-cli 1.2.9. It does not have the firmware 3.1.0 commands (post-quantum keys, age and the new settings); for those, install python-onlykey 1.3.1 with pip as below.
+:::
+
 **Stand-alone EXE (no install required)** — download and run the EXE to open OnlyKey CLI interactive mode, or run it directly from the command line:
 
 ```
@@ -24,7 +38,7 @@ C:\ onlykey-cli.exe getlabels
 
 **Install with dependencies**
 
-1. Python 3.8 and pip3 are required. To set up a Python environment on Windows we recommend Anaconda: [https://www.anaconda.com/download/#windows](https://www.anaconda.com/download/#windows)
+1. Python 3.10 or newer and pip3 are required. To set up a Python environment on Windows we recommend Anaconda: [https://www.anaconda.com/download/#windows](https://www.anaconda.com/download/#windows)
 2. From an administrator command prompt run:
 
 ```
@@ -33,12 +47,14 @@ pip3 install hidapi==0.9.0 onlykey
 
 You should see a message showing where the executable is installed. This is usually `c:\python39\scripts\onlykey-cli.exe`
 == tab macOS
-Python 3.8 and pip3 are required. To set up a Python environment on macOS we recommend Anaconda: [https://www.anaconda.com/download/#macos](https://www.anaconda.com/download/#macos)
+Python 3.10 or newer and pip3 are required. To set up a Python environment on macOS we recommend Anaconda: [https://www.anaconda.com/download/#macos](https://www.anaconda.com/download/#macos)
 
 ```
 $ brew install libusb
 $ pip3 install onlykey
 ```
+
+On an Intel Mac, install `cryptography` version 48 or older first if you want the age plugin: `pip3 install "cryptography<49"`.
 == tab Linux / BSD
 In order for non-root users in Linux to be able to communicate with OnlyKey, a udev rule must be created as described [here](/linux).
 
@@ -114,6 +130,20 @@ $ sudo udevadm control --reload-rules && udevadm trigger
 See the forum thread [here](https://groups.google.com/d/msg/onlykey/CEYwdXjB508/MCe14p0gAwAJ).
 :::
 
+### age plugin {#install-age}
+
+To also install [age-plugin-onlykey](/age), add the `age` extra (it adds cryptography and kyber-py):
+
+```
+$ pip3 install "onlykey[age]"
+```
+
+With pipx: `pipx install --system-site-packages "onlykey[age]"`.
+
+### Node.js for loadpqc {#install-node}
+
+`loadpqc` reads composite post-quantum PGP key files with the OpenPGP.js copy that ships with python-onlykey, which runs under [Node.js](https://nodejs.org). Install Node.js and make sure `node` is on your PATH before using `loadpqc`.
+
 ## QuickStart
 
 Usage: onlykey-cli [OPTIONS]
@@ -127,6 +157,12 @@ A command line tool for setting PIN on OnlyKey (Initial Configuration)
 
 #### version
 Displays the version of the app
+
+#### capabilities {#capabilities}
+Asks the firmware what it supports (needs firmware with protocol v1 or later): firmware version,
+key types, build flags (PQC, DUO, debug, whether the no-press user input mode is compiled in) and
+the user input modes each of derivedkeymode / storedkeymode / webderivemode accepts. Older
+firmware prints that it does not report capabilities.
 
 #### fwversion
 Displays the version of the OnlyKey firmware
@@ -149,7 +185,7 @@ Access OnlyKey TRNG to generate random numbers:
   - hexbytes - Output hex encoded random bytes. Default 8 bytes; Maximum 255 bytes. Specify number of bytes to return with --count <number of bytes> i.e. 'onlykey-cli rng hexbytes --count 32'
   - feedkernel - Feed random bytes to /dev/random.
 
-### OnlyKey Preferences Options
+### OnlyKey Preferences Options {#onlykey-preferences-options}
 
 #### idletimeout [num]
 OnlyKey locks after ideletimeout is reached (1 – 255 minutes; default = 30; 0 to disable). [More info](/usersguide#configurable-inactivity-lockout-period)
@@ -205,18 +241,24 @@ Change the OnlyKey's button touch sensitivity.
 WARNING: Setting button's touch sensitivity lower than 5 is not recommended as this could result in inadvertent button press.
 2 = highest sensitivity; 100 = lowest sensitivity [12 = default]
 
-#### 2ndprofilemode [num]
-Set during init (Initial Configuration) to set 2nd profile type 1 = standard (default); 2 = plausible deniability
-
 #### storedkeymode [num]
-Enable or disable challenge for stored keys (SSH/PGP)
-0 = Challenge Code Required (default); 1 = Button Press Required
-[More info](/usersguide#stored-challenge-mode)
+User input required to use a stored key (RSA1-RSA4 / PQC1-PQC4 and ECC1-ECC16 - any protocol: SSH, PGP, age, composite PQC)
+0 = Challenge Code Required; 1 = Button Press Required (default); 2 = No press (unattended agents - only honoured by firmware built with OK_ALLOW_NO_PRESS, refused otherwise)
+[More info](/user-input-modes)
 
 #### derivedkeymode [num]
-Enable or disable challenge for stored keys (SSH/PGP)
-0 = Challenge Code Required (default); 1 = Button Press Required
-[More info](/usersguide#derived-challenge-mode)
+User input required to use a derived key (SSH/GPG agent identities)
+0 = Challenge Code Required; 1 = Button Press Required (default); 2 = No press (as above)
+[More info](/user-input-modes)
+
+#### webderivemode [num]
+User input required to use a web and agent derived key - the OnlyKey web app (age pages and Password Vault) and derived X-Wing age decryption with age-plugin-onlykey. The key itself never changes with this setting.
+0 = Challenge Code Required (the web app / age plugin shows the 3 digits); 1 = Button Press Required (default); 2 = No press (press-free per-site decryption). [More info](/user-input-modes)
+
+#### webcryptpolicy [num]
+What the OnlyKey web app (apps.crp.to / apps.onlykey.io) may do with this OnlyKey. Requires firmware v3.1.0 or newer and config mode.
+0 = Derived keys only (stored keys / PGP not available to the web app); 1 = Also allow stored keys (PGP) from the web app; 2 = Turn the web app extension off entirely (derived keys included); 3 = same as 2
+Until this is set the key behaves as older firmware did: the web app may use stored keys. [More info](/user-input-modes#webcrypt-access)
 
 #### hmackeymode [num]
 Enable or disable button press for HMAC challenge-response
@@ -229,14 +271,14 @@ WARNING - Once set to "Locked" this cannot be changed unless a factory reset occ
 [More info](/usersguide#backup-key-mode)
 
 #### sysadminmode
-Enable or disable challenge for stored keys (SSH/PGP)
-0 = Challenge Code Required (default); 1 = Button Press Required
-[More info](/usersguide#derived-challenge-mode)
+Enable or disable Sysadmin Mode, which lets slots store and type modifier keys such as CTRL-ALT-DEL
+0 = Off (default); 1 = On
+[More info](/usersguide#sysadmin-mode)
 
 #### lockbutton
-Enable or disable challenge for stored keys (SSH/PGP)
-0 = Challenge Code Required (default); 1 = Button Press Required
-[More info](/usersguide#derived-challenge-mode)
+One of the buttons on OnlyKey can be configured as a lock button.
+0 = Disable lockbutton; 1-6 = The selected button
+[More info](/usersguide#configurable-lock-button)
 
 ### Slot Config Options
 
@@ -264,16 +306,20 @@ Enable or disable challenge for stored keys (SSH/PGP)
 #### wipeslot [id]
   - [id] must be slot number 1a - 6b for OnlyKey or 1-24 for OnlyKey DUO
 
-### Key Config Options
+### Key Config Options {#key-config-options}
 
 #### setkey [key slot] [type] [features] [hex key]
 Sets raw private keys and key labels, to set PEM format keys use the OnlyKey App
-  - [key slot] must be key number RSA1 - RSA4, ECC1 - ECC16, HMAC1 - HMAC2
+  - [key slot] must be key number RSA1 - RSA4, PQC1 - PQC4, ECC1 - ECC16, HMAC1 - HMAC2
   - [type] must be one of the following:
     - label - set to have a descriptive key label i.e. My GPG signing key
-    - x - X25519 Key Type (32 bytes)
+    - p - Composite PQC PGP seed blob (160 bytes; PQC1 - PQC4 only, see loadpqc)
+    - x - Ed25519 Key Type (32 bytes, signing)
     - n - NIST256P1 Key Type (32 bytes)
     - s - SECP256K1 Key Type (32 bytes)
+    - c - X25519 (Curve25519) Key Type (32 bytes, decryption only)
+    - m - ML-KEM-768 seed (64 bytes, decryption only)
+    - w - X-Wing seed (32 bytes, decryption only)
     - 2 - RSA Key Type 2048bits (256 bytes)
     - 4 - RSA Key Type 4096bits (512 bytes)
     - h - HMAC Key Type (20 bytes)
@@ -287,18 +333,43 @@ Sets raw private keys and key labels, to set PEM format keys use the OnlyKey App
 Generates random private key on device
   - [key slot] must be key number ECC1 - ECC16 (only ECC keys supported)
   - [type] must be one of the following:
-    - x - X25519 Key Type (32 bytes)
-    - n - NIST256P1 Key Type (32 bytes)
-    - s - SECP256K1 Key Type (32 bytes)
+    - x - Ed25519 Key Type
+    - n - NIST256P1 Key Type
+    - s - SECP256K1 Key Type
+    - c - X25519 (Curve25519) Key Type
+    - m - ML-KEM-768 Key Type
+    - w - X-Wing Key Type
   - [features] must be one of the following:
     - s - Use for signing
     - d - Use for decryption
     - b - Use for encryption/decryption of backups
   - For generating key see example [here](/command-line#writing-private-keys-and-passwords).
 
+#### loadpqc [keyfile] [PQC1-PQC4] [passphrase] {#loadpqc}
+Loads a composite post-quantum PGP private key (ML-KEM-768 + X25519 / ML-DSA-65 + Ed25519, IETF OpenPGP-PQC) from an armored key file into one of the four PQC slots (the RSA slots). Requires firmware v3.1.0 or newer, config mode, and **Node.js** on PATH (the key file is parsed with the bundled OpenPGP.js). A raw 160-byte seed blob can instead be loaded with `setkey PQC1 p [hex]`.
+
+#### signpqc [PQC1-PQC4] [ecc|pqc] [digest hex | file] {#signpqc}
+Signs a digest with one half of the composite PQC PGP key in a PQC slot: `ecc` gives a 64-byte Ed25519 signature, `pqc` a 3309-byte ML-DSA-65 signature, printed as hex. Requires firmware v3.1.0 or newer and asks you to confirm on the OnlyKey ([stored keys](/user-input-modes) user input mode).
+
+This is the device operation, not a PGP signer: a composite OpenPGP signature is the two halves together, and building the OpenPGP packet is up to the calling program. To sign messages, use the [web app](/webcrypt#pqc-pgp).
+
+#### decryptpqc [PQC1-PQC4] [hex | file] {#decryptpqc}
+Decapsulates with one half of the composite PQC PGP key in a PQC slot and prints the 32-byte shared secret as hex. The half is chosen by the input size: a 32-byte X25519 point uses the X25519 half, a 1088-byte ML-KEM-768 ciphertext the ML-KEM half. Requires firmware v3.1.0 or newer and asks you to confirm on the OnlyKey.
+
+Like `signpqc`, it is a building block: recovering an OpenPGP session key needs the RFC 9980 key combiner and an AES key unwrap, which the calling program does. To decrypt messages, use the [web app](/webcrypt#pqc-pgp).
+
 #### wipekey [key id]
 Erases key stored at [key id]
-  - [key id] must be key number RSA1 - RSA4, ECC1 - ECC16, HMAC1 - HMAC2
+  - [key id] must be key number RSA1 - RSA4, PQC1 - PQC4, ECC1 - ECC16, HMAC1 - HMAC2
+
+### age plugin (age-plugin-onlykey) {#age-plugin}
+See [age with OnlyKey](/age) for a full walkthrough. Installed with `pip3 install "onlykey[age]"`. Lets [age](https://age-encryption.org) encrypt to and decrypt with an OnlyKey using X-Wing (ML-KEM-768 + X25519) keys. Requires firmware v3.1.0 or newer.
+  - `age-plugin-onlykey --generate` - generate an X-Wing key on the device
+  - `age-plugin-onlykey --identity` / `--recipient` - print the identity file line / the recipient for a stored key
+  - `age-plugin-onlykey --derived --label NAME --recipient` - a derived recipient for a label; the private key never leaves the device and the same label gives the same recipient in the OnlyKey web app
+  - add `--native` to `--recipient` to print the same key as age's own post-quantum recipient (`age1pq1...`). age 1.3+, [typage](https://github.com/FiloSottile/typage), and [rage](https://github.com/str4d/rage) or older age with `age-plugin-pq` can then encrypt to the OnlyKey without this plugin installed; decryption still uses the OnlyKey identity.
+
+Files are standard age v1 (`mlkem768x25519` stanzas per the [age specification](https://github.com/C2SP/C2SP/blob/main/age.md)): what the plugin or the OnlyKey web app writes opens in age, rage and typage, and the other way around. Tested against age 1.3.2 and 1.1.1, rage 0.12.1 and typage 0.3.1.
 
 ### FIDO2 Config Options
 
@@ -379,7 +450,7 @@ Or you can run commands in an interactive shell like this:
 
 ```
 $ onlykey-cli
-OnlyKey CLI v1.2.8
+OnlyKey CLI v1.3.1
 Press the right arrow to insert the suggestion.
 Press Control-C to retry. Control-D to exit.
 
@@ -569,7 +640,7 @@ List current resident keys:
 ```
 onlykey-cli credential ls
 ```
-![](/assets/cli-cred-ls.png)
+![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/cli-cred-ls.png)
 
 Remove a resident key by credential ID
 
@@ -579,9 +650,12 @@ onlykey-cli credential rm eu7LPIjTNwIJt2Ws9LWJlXkiNKaueSEEGteZM2MT/lZtEuYo49V6de
 
 Once removed, list current resident keys to verify:
 
-![](/assets/cli-cred-ls2.png)
+![](https://raw.githubusercontent.com/trustcrypto/trustcrypto.github.io/pages/images/cli-cred-ls2.png)
 
 ## Source
 
 [OnlyKey CLI on Github](https://github.com/trustcrypto/python-onlykey)
 
+## Third-party code
+
+`onlykey/openpgp_bridge/openpgp.js` is [OpenPGP.js](https://openpgpjs.org) v6, licensed under the GNU LGPL v3. `loadpqc` runs it (through Node.js) to read composite PQC PGP key files.

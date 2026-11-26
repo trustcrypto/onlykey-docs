@@ -2,7 +2,7 @@
 title: OnlyKey Firmware
 description: The OnlyKey firmware runs on the OnlyKey itself and provides the core functionality of OnlyKey.
 slug: firmware
-last_updated: Oct, 18, 2020
+last_updated: Nov, 25, 2026
 keywords: OnlyKey, Firmware
 ---
 
@@ -21,6 +21,14 @@ Just getting started with OnlyKey?
 ## About
 
 The firmware is the software that runs on the OnlyKey itself. In order to load firmware follow the instructions in the [User's Guide here](/usersguide#loading-onlykey-firmware)
+
+## Current release {#current-release}
+
+The current firmware is **3.1.0**. It adds [post-quantum keys](/pqc), [age](/age) file encryption with derived keys, the [Password Vault](/vault), separate [user input modes](/user-input-modes) and Webcrypt Access, and an encrypted, authenticated connection to the [web app](/webcrypt) at apps.onlykey.io, along with security improvements. OnlyKey and OnlyKey DUO use the same firmware file, and there is one edition.
+
+- [Upgrade Guide](/upgradeguide) - back up first, then load 3.1.0
+- [Release notes](https://github.com/trustcrypto/OnlyKey-Firmware/releases/tag/v3.1.0-prod)
+- [Version compatibility](/compatibility)
 
 ## Development
 
@@ -56,6 +64,8 @@ The following cryptographic software is included in this distribution:
                       "MICRO-ECC PROJECT" - https://github.com/kmackay/micro-ecc
                       "ARDUINOLIBS PROJECT" - https://rweather.github.io/arduinolibs/crypto.html
                       "YUBICO-C PROJECT" - https://github.com/Yubico/yubico-c
+                      "MLKEM-NATIVE" - https://github.com/pq-code-package/mlkem-native
+                      "MLDSA-NATIVE" - https://github.com/pq-code-package/mldsa-native
 
 For more information on export restrictions see: http://www.apache.org/licenses/exports/
 

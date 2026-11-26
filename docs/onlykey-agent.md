@@ -1,8 +1,8 @@
 ---
 title: OnlyKey SSH/GPG agent
-description: Using OnlyKey as hardware SSH and GnuPG agent.
+description: Using OnlyKey as hardware SSH and GnuPG agent on Linux, macOS and Windows. onlykey-agent 1.1.17.
 slug: onlykey-agent
-last_updated: Sep, 14, 2021
+last_updated: Nov, 25, 2026
 keywords: OnlyKey, Agent
 ---
 
@@ -12,7 +12,7 @@ OnlyKey Agent is a hardware-based SSH and GPG agent that allows offline cold sto
 
 ## How to use OnlyKey Agent
 
-SSH is a popular remote access tool that is often used by administrators and with OnlyKey Agent remote access can be passwordless. GPG (or GnuPG) is a versatile OpenPGP tool that is used for encryption and signing. The way OnlyKey Agent works is that the indicator light on OnlyKey will blink purple for a sign request (such as SSH authentication), and will blink turquoise for a decrypt request. To authorize a user must press button (or [challenge code](/usersguide#derived-challenge-mode)) on OnlyKey.
+SSH is a popular remote access tool that is often used by administrators and with OnlyKey Agent remote access can be passwordless. GPG (or GnuPG) is a versatile OpenPGP tool that is used for encryption and signing. The way OnlyKey Agent works is that the indicator light on OnlyKey will blink purple for a sign request (such as SSH authentication), and will blink turquoise for a decrypt request. To authorize a user must press a button (or enter the [challenge code](/user-input-modes#challenge-code)) on OnlyKey.
 
 :::tip "💡 Pro Tip"
 Prefer a how-to video? Watch one [here](https://vimeo.com/374479136)
@@ -26,6 +26,39 @@ You can do things like sign your emails, git commits, and software packages, man
 Example shows import (-i) of an existing OpenPGP public key (eccpub.asc) to GnuPG for hardware protected Pass with OnlyKey:
 
 ![](/assets/pass.gif)
+
+## What's new in onlykey-agent 1.1.17 {#whats-new}
+
+onlykey-agent 1.1.17 (with lib-agent 1.0.9) is the release for OnlyKey firmware 3.1.0. It needs Python 3.10 or newer.
+
+- **Your existing keys do not change.** Derived SSH and GPG keys still use the original derivation by default.
+- **Derivation v2 (opt-in):** `--skey derived-v2` / `--dkey derived-v2` gives a new set of keys from a stronger (HKDF) derivation. Needs firmware 3.1.0. See [Derivation v2](#derived-v2).
+- **Windows:** the SSH agent works with the OpenSSH that comes with Windows, and GPG works with Gpg4win. See [Installation](#installation).
+- **GnuPG 2.5:** decryption works with GnuPG 2.5 as well as 2.4.
+- **The challenge code is shown** next to the "Confirm on OnlyKey" message, so you know what to enter in challenge-code mode.
+
+To upgrade: `pip3 install --upgrade onlykey-agent`.
+
+## Derivation v2 {#derived-v2}
+
+onlykey-agent derives a key for each SSH or GPG identity from a key on the OnlyKey, so no setup is needed. Firmware 3.1.0 adds a second, HKDF-SHA256 based derivation, **derived-v2**. It gives **different keys** from the original derivation, so use it for new identities, or when you are ready to replace the public keys on your servers.
+
+The original derivation stays the default, and GnuPG home directories you made earlier keep using it.
+
+SSH, print the v2 public key for an identity and connect with it:
+
+```
+$ onlykey-agent user@host --skey derived-v2
+$ onlykey-agent -c user@host --skey derived-v2
+```
+
+GPG, create an identity that signs and decrypts with v2 keys:
+
+```
+$ onlykey-gpg init "Bob Smith <bob@example.com>" --skey derived-v2 --dkey derived-v2
+```
+
+`ECC32v2` is another name for `derived-v2`; `ECC32` (the default) is the original derivation.
 
 ## SSH Agent Quickstart Guide {#ssh-agent-quickstart-guide}
 
@@ -59,7 +92,7 @@ Cut and paste the whole string into your server ~/.ssh/authorized_keys file, you
 $ onlykey-agent identity@myhost -c
 ```
 
-You will be prompted for a challenge code, type this on your OnlyKey to complete log in. If you wish to just require any button press to login, in the OnlyKey App -> Preferences choose to [disable challenge code](/usersguide#derived-challenge-mode) (device must be in config mode to change setting).
+Confirm on your OnlyKey to complete the login: tap any button (the default), or, if you set the SSH/GPG derived keys mode to Challenge code, enter the three-digit code onlykey-agent prints. To change the mode, see [User Input Modes](/user-input-modes) (the device must be in config mode).
 
 ### Common SSH Use Cases
 
@@ -395,23 +428,63 @@ If you wish to switch back to your software keys unset GNUPGHOME.
 
 4) Log out and back into your session to ensure your environment is updated everywhere.
 
+## Post-quantum keys {#pqc}
+
+onlykey-agent's SSH and GPG commands use classic keys: derived keys, and stored keys in RSA1-RSA4 and ECC1-ECC16. They do not use the composite post-quantum OpenPGP keys in PQC1-PQC4. To use those, use the [web app or onlykey-cli](/pqc#use-composite).
+
+- **GPG:** GnuPG cannot read composite keys. They are OpenPGP v6 keys ([RFC 9980](https://www.rfc-editor.org/rfc/rfc9980)), and GnuPG 2.4 and 2.5 do not read v6 keys. GnuPG's own post-quantum encryption follows LibrePGP, a different format, and it has no post-quantum signatures. So onlykey-gpg cannot make a GnuPG identity from a composite key. If you point `--skey` or `--dkey` at a slot that holds one, onlykey-gpg stops with an error, because the OnlyKey does not give out a composite key's public key.
+- **SSH:** OpenSSH has no post-quantum key type for logging in. The connection itself is already protected: OpenSSH 10.0 and newer use post-quantum key exchange (`mlkem768x25519-sha256`) by default, whichever key you log in with, including the keys on your OnlyKey. Only the login signature is classic.
+
+### For developers: the composite PQC module {#pqc-module}
+
+lib-agent 1.0.9 includes `libagent.device.onlykey_pqc`, a Python module that performs complete RFC 9980 operations with a composite key on the OnlyKey. The OnlyKey does each half: the Ed25519 and ML-DSA-65 signatures, and the X25519 and ML-KEM-768 decapsulations. The module does the OpenPGP part on the computer. It joins the two signatures, and combines the two shared secrets with the RFC 9980 key combiner and an AES key unwrap to recover a message's session key. onlykey-agent itself does not call it.
+
+| Function | Returns |
+| --- | --- |
+| `composite_sign(ok, slot, digest)` | The 3373-byte composite signature of `digest`, the hash of the OpenPGP signature you are building: Ed25519 (64 bytes), then ML-DSA-65 (3309 bytes) |
+| `composite_decrypt(ok, slot, ecc_ct, mlkem_ct, ecc_pub, mlkem_pub, wrapped_key)` | The session key from an ML-KEM-768+X25519 PKESK packet. `ecc_ct`, `mlkem_ct` and `wrapped_key` are the packet's fields; `ecc_pub` and `mlkem_pub` are the X25519 and ML-KEM-768 public keys of your encryption subkey |
+
+`ok` is an open `onlykey.client.OnlyKey`, and `slot` is 1-4 for PQC1-PQC4. Each call asks you to confirm on the OnlyKey twice, once for each half, as set by the **stored keys** [user input mode](/user-input-modes).
+
+```python
+from onlykey.client import OnlyKey
+from libagent.device import onlykey_pqc
+
+ok = OnlyKey()
+signature = onlykey_pqc.composite_sign(ok, 1, digest)  # the key in PQC1
+ok.close()
+```
+
+The module's source says it is untested against hardware. We tested it on the OnlyKey firmware 3.1.0 emulator with keys made by [make-pqc-key.js](/pqc#create-composite) and by rsop. rPGP (rsop 0.12) verified the signatures from `composite_sign`. `composite_decrypt` recovered the session keys of messages that rsop encrypted, with both v3 and v6 PKESK packets.
+
 ## Installation {#installation}
 
 ::: tabs
 == tab Windows
-Windows is not supported directly, but you can use OnlyKey Agent inside a Linux virtual machine via Windows Subsystem for Linux (WSL 2) by following the instructions [here](/wsl). Another alternative is to use [OpenSSH v8.2](/openssh), which supports OnlyKey as a FIDO security key.
+Install [Python](https://www.python.org/downloads/windows/) 3.10 or newer, then:
+
+```
+> pip install onlykey-agent
+```
+
+- **SSH:** the agent serves SSH on a Windows named pipe, which the OpenSSH client included with Windows uses. `onlykey-agent -c user@host` connects with Windows' own `ssh.exe` (an ssh from Git Bash or MSYS cannot reach the agent).
+- **GPG:** use [Gpg4win](https://www.gpg4win.org). `onlykey-gpg init` sets up the GnuPG home directory with a `run-agent.cmd` launcher, and the agent uses GnuPG's Windows socket.
+
+You can also use OnlyKey Agent inside Windows Subsystem for Linux (WSL 2) by following the instructions [here](/wsl), or use [OpenSSH](/openssh) with OnlyKey as a FIDO security key.
 == tab macOS
-We recommend installing with [Homebrew](https://brew.sh/):
+Install with pip (Python 3.10 or newer):
+
+```
+$ pip3 install onlykey-agent
+```
+
+Or with [Homebrew](https://brew.sh/):
 
 ```
 $ brew install onlykey-agent
 ```
 
-Alternatively, install using pip:
-
-```
-$ pip3 install onlykey-agent
-```
+Check the version with `onlykey-agent --version`; firmware 3.1.0 features need 1.1.17 or later.
 == tab Linux / BSD
 Non-root users in Linux need a udev rule — see [Linux UDEV Rule](/linux).
 
@@ -474,14 +547,6 @@ $ sudo cp 49-onlykey.rules /etc/udev/rules.d/
 $ sudo udevadm control --reload-rules && udevadm trigger
 ```
 :::
-
-## Roadmap
-
-In a future release we will be implementing the following features:
-
-- GPG challenge code add on to pass the challenge code to GPG for displaying to the user.
-- Windows support and stand-alone EXE for easy deployment. This feature is not yet implemented, it is possible to use the agent with a Windows subsystem for Linux.
-- Pure Python PGP implementation, this feature will permit use on systems where GPG is not installed. If GPG is not found PGPy will be used for OpenPGP support.
 
 ## GPG Agent FAQ
 
@@ -716,8 +781,10 @@ onlykey-agent user@host -e rsa -sk RSA2
 
 ### Setting Derived Key User Input Mode {#setting-derived-key-user-input-mode}
 
-Currently it is not possible to display the 3 digit challenge code to user through GPG. This feature is on the roadmap. To use derived keys with GPG go to preferences in the OnlyKey app and set 'Derived Key User Input Mode' to 'Button Press Required'.
+Derived SSH and GPG keys follow the **SSH/GPG derived keys** [user input mode](/user-input-modes): Button Press or Challenge Code. Set it in the OnlyKey App under **Preferences › User Input Modes**, or with `onlykey-cli derivedkeymode` (config mode required).
+
+onlykey-agent prints the challenge code with its "Confirm on OnlyKey" message. For SSH the message appears in your terminal. GnuPG starts the agent in the background, so with GPG the message goes to the agent's log; Button Press is the easier choice for keys you use with GPG.
 
 ### Setting Stored Key User Input Mode {#setting-stored-key-user-input-mode}
 
-Currently it is not possible to display the 3 digit challenge code to user through GPG. This feature is on the roadmap. To use derived keys with GPG go to preferences in the OnlyKey app and set 'Stored Key User Input Mode' to 'Button Press Required'.
+Stored keys (RSA1-RSA4 and ECC1-ECC16) follow the **Stored keys** [user input mode](/user-input-modes). Set it in the OnlyKey App under **Preferences › User Input Modes**, or with `onlykey-cli storedkeymode` (config mode required). The challenge code is shown the same way as for derived keys.

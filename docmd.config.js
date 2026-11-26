@@ -15,6 +15,7 @@ module.exports = defineConfig({
         { title: 'Get Started', path: '/' },
         { title: 'FAQs', path: '/faq' },
         { title: 'About Security', path: '/security' },
+        { title: 'Version Compatibility', path: '/compatibility' },
       ],
     },
     { title: "OnlyKey User's Guide", path: '/usersguide' },
@@ -25,10 +26,19 @@ module.exports = defineConfig({
       collapsible: true,
       children: [
         { title: 'Desktop App', path: '/app' },
-        { title: 'WebCrypt (OpenPGP Webapp)', path: '/webcrypt' },
+        { title: 'WebCrypt (Web App)', path: '/webcrypt' },
         { title: 'SSH/GPG Agent (onlykey-agent)', path: '/onlykey-agent' },
         { title: 'Command-Line Utility (onlykey-cli)', path: '/command-line' },
         { title: 'Firmware', path: '/firmware' },
+      ],
+    },
+    {
+      title: 'Post-Quantum',
+      collapsible: true,
+      children: [
+        { title: 'Post-Quantum Keys', path: '/pqc' },
+        { title: 'age with OnlyKey', path: '/age' },
+        { title: 'Password Vault', path: '/vault' },
       ],
     },
     {
@@ -37,6 +47,7 @@ module.exports = defineConfig({
       children: [
         { title: 'Works with OnlyKey', path: '/workswithonlykey' },
         { title: 'Upgrade Guide', path: '/upgradeguide' },
+        { title: 'User Input Modes and Webcrypt Access', path: '/user-input-modes' },
         { title: 'Legacy Firmware Upgrade Guide', path: '/legacyupgradeguide' },
         { title: 'International Travel Edition Guide', path: '/ite' },
         { title: 'Plausible Deniability Setup Guide', path: '/pdguide' },

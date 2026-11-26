@@ -2,7 +2,7 @@
 title: "OnlyKey User's Guide"
 description: "The OnlyKey user's guide provides step-by-step instructions for configuring and using OnlyKey."
 slug: usersguide
-last_updated: Dec, 28, 2022
+last_updated: Nov, 25, 2026
 keywords: "OnlyKey, User's Guide"
 ---
 
@@ -131,7 +131,9 @@ Prefer a how-to video? Watch one [here](https://vimeo.com/967163806) that demons
 
 :::
 
-### Configure Basic Login Info {#all-about-slots}
+<a name="slots"></a>
+
+### Configure Basic Login Info {#configure-basic-login-info}
 
 :::callout
 **Enter your PIN -**  After setup you are prompted to enter the PIN you set onto your OnlyKey six button keypad.
@@ -476,7 +478,7 @@ To find out if a specific website is supported there is a full list of websites 
 
 One requirement of TOTP (Time-based One-time Password) is having the correct time. If OnlyKey is used on a system where the OnlyKey app is not running it will type out "NOTSET" instead of the OTP code. Because OnlyKey has no battery it requires an app to send it the correct time to be able to generate TOTP codes. For this reason it is important to ensure the OnlyKey app is permitted to autostart.
 
-However, OnlyKey TOTP will work on-the-go without the app running. All you have to do is browse to our web app [https://apps.crp.to](https://apps.crp.to) in Google Chrome or Firefox. This web app in addition to being used to send encrypted messages sets the current time on OnlyKey and login with TOTP will function as normal.
+However, OnlyKey TOTP will work on-the-go without the app running. All you have to do is browse to our web app [https://apps.onlykey.io](https://apps.onlykey.io) (firmware 3.1.0; for firmware 3.0.4 or older use [https://apps.crp.to](https://apps.crp.to)) in Google Chrome or Firefox and select **Set Time for OTP 2FA**. This web app in addition to being used to send encrypted messages sets the current time on OnlyKey and login with TOTP will function as normal.
 
 ![](/assets/totp.png)
 
@@ -784,15 +786,21 @@ Note: These additional keyboard layouts are available but cannot currently be se
 
 ### Derived Key User Input Mode {#derived-challenge-mode}
 
-OnlyKey supports automatic generation of keys that may be used for SSH and PGP/GPG with the [OnlyKey Agent](/onlykey-agent).
-
-The default setting is "Challenge Code Required" which requires a 3 digit challenge code to be entered on OnlyKey to perform SSH or PGP/GPG operation. This is great for security but for some users a more convenient approach may be preferred. With "Button Press Required", a physical press on any key is all that is required to perform the operation.
+OnlyKey derives keys for SSH and PGP/GPG for the [OnlyKey Agent](/onlykey-agent) automatically. This setting, **SSH/GPG derived keys** in the OnlyKey App, chooses how you confirm when one of these keys is used: **Button Press** (tap any button) or **Challenge Code** (enter the 3 digits the agent shows).
 
 ### Stored Key User Input Mode {#stored-challenge-mode}
 
-OnlyKey supports [import of existing OpenPGP keys](/importpgp#loading-keys) using the [OnlyKey app](/app). These keys once imported are securely stored in OnlyKey hardware and may be used to perform SSH or PGP/GPG operations with the [OnlyKey Agent](/onlykey-agent) or in the browser with the [OnlyKey WebCrypt](/webcrypt).
+Keys you load or generate in a key slot are stored keys: [OpenPGP keys](/importpgp#loading-keys), OpenSSH keys, [post-quantum keys](/pqc) and stored [age](/age) keys. They are used by the [OnlyKey Agent](/onlykey-agent), [onlykey-cli](/command-line) and [OnlyKey WebCrypt](/webcrypt). This setting, **Stored keys** in the OnlyKey App, chooses **Button Press** or **Challenge Code** for them.
 
-By default, you must enter a 3 digit challenge code on OnlyKey to perform SSH or PGP/GPG operation. If a more convenient approach is preferred "Button Press Required" may be set so that a physical press on any key is all that is required.
+### Web and Agent Derived Key User Input Mode {#web-derive-mode}
+
+With firmware 3.1.0, OnlyKey also derives keys from a label for the [web app](/webcrypt) (its age pages and [Password Vault](/vault)) and for [age-plugin-onlykey](/age). This setting, **Web and agent derived keys** in the OnlyKey App, chooses **Button Press**, **Challenge Code** or **None (no confirmation)**, which is meant for unattended tools.
+
+Button Press is the default for all three on a new or factory-reset key. A key first set up on firmware older than 3.0.2 keeps Challenge Code for stored and SSH/GPG derived keys until you change it. To change them, put the OnlyKey into config mode and go to **Preferences › User Input Modes** in the OnlyKey App. The app cannot read the current settings, so it writes only the ones you choose. See [User Input Modes and Webcrypt Access](/user-input-modes) for the details, including how the challenge code works.
+
+### Webcrypt Access {#webcrypt-access}
+
+With firmware 3.1.0 you can choose what the [OnlyKey web app](/webcrypt) may use: **Stored and derived keys** (the default), **Derived keys only**, or **Off**. Set it in config mode under **Preferences › Webcrypt Access**. See [Webcrypt Access](/user-input-modes#webcrypt-access).
 
 ### HMAC Mode {#hmac-mode}
 
@@ -915,6 +923,8 @@ Watch a video [here](https://vimeo.com/374653109) that demonstrates using OnlyKe
 2.  **SSH Authentication** - SSH is a popular remote access tool that is often used by administrators. Thanks to the OnlyKey SSH Agent remote access can be passwordless and more secure. For information on using OnlyKey for SSH authentication see [OnlyKey SSH Agent](/onlykey-agent#ssh-agent-quickstart-guide).
 3.  **Secure Encrypted Backup** - This will backup everything including your stored accounts, preferences, and other keys to an encrypted text file. For information on backing up OnlyKey see [Secure Encrypted Backup](#secure-encrypted-backup-anywhere).
 
+4.  **Post-Quantum Keys** - With firmware 3.1.0, OnlyKey can also hold post-quantum keys: ML-KEM-768 and X-Wing keys for [age](/age) file encryption, and composite post-quantum OpenPGP keys for the [web app](/webcrypt#pqc-pgp). The [Password Vault](/vault) uses post-quantum keys derived on the device. See [Post-Quantum Keys](/pqc).
+
 **How do I get started?**
 
 By default, no setup is required to use [OnlyKey GPG Agent](/onlykey-agent#gpg-agent-quickstart-guide) and [OnlyKey SSH Agent](/onlykey-agent#ssh-agent-quickstart-guide) as OnlyKey uses random key (derived keys) by default.
@@ -968,6 +978,8 @@ The process is the same to backup without the app. OnlyKey can type out your enc
 
 **Save it in an email** - In the same way you could also click into any email client and then when the backup is complete send the email to yourself or someone else.
 
+<a name="restoring-onlykey"></a>
+
 ## Restore From Backup {#restore-from-backup}
 
 Using the backup file created in the [Secure Encrypted Backup Anywhere](/usersguide#secure-encrypted-backup-anywhere) section, OnlyKey can be restored to a previous state. This also allows restoring to a different OnlyKey or a second OnlyKey in order to have an extra.
@@ -990,24 +1002,17 @@ The way that a restore works is that it overwrites the current information on yo
 ## Loading OnlyKey Firmware {#loading-onlykey-firmware}
 
 :::callout
-**Backup OnlyKey** - It is always a good idea to create a backup prior to upgrading. Do this by going to the Backup/Restore tab in the OnlyKey app. Ensure you have a copy of your backup key/passphrase ([User Guide Backup Instructions here](/usersguide#secure-encrypted-backup-anywhere)).
+**Back up your OnlyKey first** - Go to the Backup tab in the OnlyKey App and create a backup. Make sure you have your backup key or passphrase ([backup instructions](#secure-encrypted-backup-anywhere)).
 :::
 
-### Download Firmware
+### Download Firmware {#download-firmware}
 
-- Download <a href="https://github.com/trustcrypto/OnlyKey-Firmware/releases/download/v3.0.4-prod/Signed_OnlyKey_3_0_4_STD.txt" target="_blank" download>OnlyKey firmware</a>
+The current firmware, its checksum and the step-by-step instructions are in the [Upgrade Guide](/upgradeguide#loading-onlykey-firmware). OnlyKey and OnlyKey DUO use the same firmware file.
 
-### Load Signed Firmware
+### Load Signed Firmware {#load-signed-firmware}
 
-There is a tab named Firmware in the app. This may be used to load the latest firmware onto OnlyKey directly through the OnlyKey app.
-
-- Go to the Firmware tab in the app
-- Follow the instructions in the app to load firmware
-
-:::note
-You can ensure the integrity of your downloaded file by verifying the checksum. <br>Signed_OnlyKey_3_0_4_STD.txt SHA 256 checksum:<br>
-f895100a2f828b66ec5335fd676ef659daf87d51bfeecca5fb8bf9b7c8e259bd
-:::
+- Go to the **Firmware** tab in the OnlyKey App. Select **Check now** to look for a new version, or turn on **Automatically check for firmware updates**.
+- Follow the instructions in the app to load the firmware. The app checks the download against its SHA-256 checksum before loading it.
 
 ## OnlyKey Accessories / Mobile Support {#onlykey-accessories-mobile-support}
 
