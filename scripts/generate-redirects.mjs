@@ -34,6 +34,8 @@ const LEGACY_ALIASES = {
   sshagentquickstart: 'onlykey-agent/#ssh-agent-quickstart-guide',
   agentquickstart: 'onlykey-agent/',
   'onlykey-agent-quickstart': 'onlykey-agent/',
+  // OnlyKey App 6.0.0 links its Linux USB permissions dialog here.
+  appfaq: 'linux/#udev-rule',
 };
 
 function stub(target) {

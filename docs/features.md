@@ -2,7 +2,7 @@
 title: OnlyKey Features
 description: Detailed information on OnlyKey Features
 slug: features
-last_updated: Dec, 28 2022
+last_updated: Nov, 25, 2026
 keywords: OnlyKey, Features
 ---
 
@@ -34,12 +34,12 @@ Information can only be written to the OnlyKey or wiped. This protects your data
 
 ## Key Features
 
-### HARDWARE PASSWORD MANAGER
+### HARDWARE PASSWORD MANAGER {#hardware-password-manager}
 Instead of having to remember all of your passwords you can just remember one 7 - 10 digit PIN. OnlyKey stores up to 24 unique accounts in offline storage and can be used to secure an unlimited number of accounts if used in conjunction with a software password manager. You can set up each of the 24 accounts using strong and random (up to 56 character) passwords along with the login page URLs, usernames, and/or two-factor authentication. This way whenever you need to log in you just detach the OnlyKey from your keyring and enter your PIN to unlock your passwords. The Onlykey automatically types them into the login fields for you with the press of a button.
 ![](/assets/mobile.gif)
 
 
-### UNIVERSAL 2-FACTOR TOKEN
+### UNIVERSAL 2-FACTOR TOKEN {#universal-2-factor-token}
 Supports FIDO2 and FIDO Universal 2nd Factor Authentication (U2F), OATH TOTP, and Yubikey® compatible OTP. Chances are that if the website supports two-factor authentication, OnlyKey is compatible.
 ![](/assets/fido2.gif)
 
@@ -48,13 +48,13 @@ Supports FIDO2 and FIDO Universal 2nd Factor Authentication (U2F), OATH TOTP, an
 *   [Yubico® One-Time Password](/usersguide#Yubico-one-time-password)
 *   [Challenge-Response](/usersguide#challenge-response)
 
-### SSH AUTHENTICATION
+### SSH AUTHENTICATION {#ssh-authentication}
 SSH authentication is easy with passwordless login. Your SSH key remains securely stored in hardware and not available to attackers.
 
 *   [OpenSSH Support](/openssh)
 *   [OnlyKey Agent SSH](/onlykey-agent)
 
-### OPENPGP SUPPORT
+### OPENPGP SUPPORT {#openpgp-support}
 Using OnlyKey makes OpenPGP easier than ever.
 ![](/assets/agent.gif)
 
@@ -66,17 +66,24 @@ Keys are loaded using the OnlyKey App. Step by step directions for generating an
 *   [Generate keys](/importpgp#generating-keys) using Keybase
 *   [Load keys](/importpgp#loading-keys) onto OnlyKey
 
+### POST-QUANTUM ENCRYPTION {#post-quantum}
+With firmware 3.1.0, OnlyKey holds post-quantum keys designed to keep what you encrypt today safe even against future quantum computers. The private keys never leave the device.
+
+*   [Post-quantum keys](/pqc) - ML-KEM-768 and X-Wing keys the OnlyKey generates itself, and composite post-quantum OpenPGP keys (ML-DSA-65 + Ed25519, ML-KEM-768 + X25519)
+*   [age file encryption](/age) - with a post-quantum key derived from a label, so there is nothing extra to back up, or stored on the device
+*   [Password Vault](/vault) - secrets encrypted to post-quantum keys on your OnlyKey
+
 ### SELF-DESTRUCT FEATURE {#self-destruct-feature}
 In a pinch and want to wipe your OnlyKey? Enter your self-destruct PIN to wipe EVERYTHING! Plus you can always restore from backup easily.
 
 *   [What does entering the self destruct PIN do?](/faq#what-does-entering-the-self-destruct-pin-do)
 
-### PLAUSIBLE DENIABILITY FEATURE
-The first and only hardware solution where only you hold the keys + no proof there even are keys! Travel abroad without having to give up your encryption keys/passwords.
+### PLAUSIBLE DENIABILITY FEATURE {#plausible-deniability-feature}
+Plausible deniability can no longer be set up on firmware 3.1.0. An OnlyKey that already uses it keeps working after the upgrade. A second profile is now always encrypted with its own PIN.
 
-*   [International Travel Edition Guide](/ite)
+*   [Plausible Deniability Setup Guide](/pdguide) (for existing setups)
 
-### ENCRYPTED BACKUP ANYWHERE
+### ENCRYPTED BACKUP ANYWHERE {#encrypted-backup-anywhere}
 OnlyKey types out the encrypted backup so it works anywhere independent of apps. Save the encrypted backup to a file or email it to yourself.
 
 *   For information on setting up and using secure encrypted backup see the user's guide [here](/usersguide#secure-encrypted-backup-anywhere)

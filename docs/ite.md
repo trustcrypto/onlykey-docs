@@ -6,6 +6,10 @@ last_updated: June, 6, 2024
 keywords: OnlyKey, International Travel Edition, Plausible Deniability
 ---
 
+:::warning "⚠️ Removed in firmware 3.1.0"
+The International Travel Edition was removed in OnlyKey firmware 3.1.0. There is now one firmware edition, used by both OnlyKey and OnlyKey DUO. This guide is kept for OnlyKeys that still run the International Travel Edition of firmware 3.0.4 or older.
+:::
+
 ## What is the International Travel Edition?
 
 This version of OnlyKey firmware is designed to meet all international requirements in regards to encryption. It does this by not utilizing encryption at all. Because this version does not encrypt any data on device it can be used in areas where data encryption is forbidden and/or there are mandatory key disclosure requirements. This is particularly useful for international travel where the traveler would like to have secure portable access to accounts.

@@ -1,129 +1,140 @@
 ---
-title: OnlyKey WebCrypt App
-description: With WebCrypt all you need is an OnlyKey and a browser to encrypt files and messages on-the-go.
+title: OnlyKey WebCrypt (Web App)
+description: Encrypt, decrypt and sign messages and files in your browser with OnlyKey - PGP, post-quantum PGP, age and the Password Vault. Web app 4.0 at apps.onlykey.io.
 slug: webcrypt
-last_updated: Jan, 27, 2021
-keywords: OnlyKey, App
+last_updated: Nov, 25, 2026
+keywords: OnlyKey, WebCrypt, web app, OpenPGP, PGP, age, post-quantum, Vault, Keybase, Protonmail
 ---
 
-![OnlyKey WebCrypt](https://raw.githubusercontent.com/onlykey/onlykey.github.io/master/logo-with-text.png)
-========
+# OnlyKey WebCrypt (Web App)
 
 ## About
 
-OnlyKey WebCrypt provides a way to securely use OnlyKey in the browser. The Webcrypt app loads everything necessary to encrypt messages and files directly in the local browser without the need to send messages or files over the Internet. Data between [OnlyKey](https://onlykey.io) and the local browser is end-to-end encrypted.
+OnlyKey WebCrypt is the OnlyKey web app. It encrypts, decrypts and signs messages and files directly in your browser, with the private keys kept on your OnlyKey. Nothing you encrypt is sent over the Internet: the page runs entirely in your browser and talks to the OnlyKey over USB through FIDO2, so no drivers or software are needed.
 
-WebCrypt integrates with services like [Keybase](https://keybase.io/) and [Protonmail](https://protonmail.com) to provide OpenPGP encryption and key management everywhere on-the-go. With OnlyKey you have offline cold storage of your OpenPGP keys and can still easily encrypt messages and files.
+Web app 4.0 adds post-quantum encryption with [age](#age) and [composite PQC PGP keys](#pqc-pgp), a [Password Vault](/vault), and an [encrypted, authenticated connection](#transit-v2) to the OnlyKey.
 
-- Supports Firefox, Google Chrome, Brave, and Edge (new) browsers!
-- Supports macOS, Windows, Linux, Chrome OS, Android, and iPhone (Safari on iOS 13.3+)
+## Which site to use {#which-site}
 
-[Try it out here!](https://apps.crp.to)
+| Your OnlyKey firmware | Web app |
+| --- | --- |
+| **3.1.0 or later** | [apps.onlykey.io](https://apps.onlykey.io) |
+| **3.0.4 or older** | [apps.crp.to](https://apps.crp.to) |
 
-[Encrypt Files](https://apps.crp.to/encrypt-file)
+A key on firmware 3.0.4 or older cannot answer on apps.onlykey.io. The page then says that no OnlyKey is connected and links to apps.crp.to. To upgrade, see the [Upgrade Guide](/upgradeguide).
 
-[Decrypt Files](https://apps.crp.to/decrypt-file)
+The OnlyKey App's **Tools** tab opens these pages on apps.onlykey.io.
 
-[Encrypt Messages](https://apps.crp.to/encrypt)
+## What the web app can do {#pages}
 
-[Decrypt Messages](https://apps.crp.to/decrypt)
+| Page | What it does |
+| --- | --- |
+| [Encrypt › Message](https://apps.onlykey.io/app/encrypt) and [Decrypt › Message](https://apps.onlykey.io/app/decrypt) | PGP messages with the keys stored on your OnlyKey |
+| [Encrypt › File](https://apps.onlykey.io/app/encrypt-file) and [Decrypt › File](https://apps.onlykey.io/app/decrypt-file) | PGP files |
+| [Encrypt › PQC-PGP](https://apps.onlykey.io/app/pqc-encrypt) and [Decrypt › PQC-PGP](https://apps.onlykey.io/app/pqc-decrypt) | Messages with composite post-quantum PGP keys |
+| [Encrypt › AGE](https://apps.onlykey.io/app/age-encrypt) and [Decrypt › AGE](https://apps.onlykey.io/app/age-decrypt) | age files with derived post-quantum keys |
+| [Search](https://apps.onlykey.io/app/search) | Find a Keybase user or Protonmail address to send to |
+| [Vault](https://apps.onlykey.io/app/vault) | The [Password Vault](/vault) |
+| Home page: **Set Time for OTP 2FA** | Sets the OnlyKey's clock so it can generate TOTP codes when the OnlyKey App is not running |
 
-:::tip "💡 Pro Tip"
-WebCrypt 3.0 Demo [here](https://vimeo.com/505377733) that demonstrates using OnlyKey WebCrypt for file encryption
+The web app works in desktop and mobile browsers that support FIDO2 security keys. See [Mobile](/mobile) for phones and tablets.
 
-::: embed https://vimeo.com/505377733
+## PGP with keys stored on OnlyKey {#openpgp-action}
 
-:::
+WebCrypt works with [Keybase](https://keybase.io) and [Protonmail](https://proton.me) to find other people's public keys, so you can encrypt to someone by name. Your own PGP key must be loaded onto the OnlyKey first; see [OpenPGP Keys](/importpgp#generating-keys).
 
-## How it works
-
-With Keybase and/or Protonmail management of identify and keys is easy, these services allow storage and searching of public keys. These public keys can then be retrieved and used to encrypt or verify messages and files. OnlyKey WebCrypt allows composing encrypted messages and encrypting files similarly to composing an email. The recipient is either a user's Keybase username, Protonmail email, or a pasted public key. The sender can be anyone allowing OnlyKey user's to use WebCrypt to receive encrypted messages and files from anyone, even non-OnlyKey users.
-
-With OnlyKey, private keys remain securely offline. Private keys are not accessible to the browser or even the local computer. This provides similar function to a token/smart card but no drivers or software required. All that is needed is a browser that supports FIDO2 and an OnlyKey to send secure messages and files.
-
-## How to send an encrypted message
-
-:::callout
-**Find a recipient -** The first step in sending a secure message or file is to identify who to send it to. Browse to [https://apps.crp.to/search](https://apps.crp.to/search) to use our custom Keybase/Protonmail search tool to search for Keybase usernames and Protonmail email addresses.<br>
-:::
-
-:::callout
-**Send a user encrypted message or file -** Click the link in the search results to send the selected user encrypted message/file. You can also browse to [https://apps.crp.to/encrypt](https://apps.crp.to/encrypt) to send a secure message or browse to [https://apps.crp.to/encrypt-file](https://apps.crp.to/encrypt-file) to send a secure file if you already know the recipient. To encrypt files for yourself just use your Keybase username or Protonmail email as the recipient.
-:::
-
-## How to receive an encrypted message
+### Send an encrypted message or file {#send}
 
 :::callout
-**Receive an encrypted message or file -** To decrypt a message or file browse to [https://apps.crp.to/decrypt](https://apps.crp.to/decrypt) or [https://apps.crp.to/decrypt-file](https://apps.crp.to/decrypt-file).
+**Step 1.** Find the recipient: open [Search](https://apps.onlykey.io/app/search) and look up their Keybase username or Protonmail address, then follow the link in the results. Or go straight to [Encrypt › Message](https://apps.onlykey.io/app/encrypt) or [Encrypt › File](https://apps.onlykey.io/app/encrypt-file).
 :::
+
+:::callout
+**Step 2.** Enter the recipient's Keybase username or Protonmail address, or paste their public key. Several recipients are supported.
+:::
+
+:::callout
+**Step 3.** To sign, enter your own Keybase username or Protonmail address and choose **Encrypt and Sign** (or **Sign Only**). Under **Key slot**, leave **Auto** or pick the RSA or ECC slot that holds your key.
+:::
+
+:::callout
+**Step 4.** Enter the message or choose the file, then select **Encrypt and Sign**. If you are signing, confirm on the OnlyKey when asked.
+:::
+
+Paste the encrypted message into an email, chat or anywhere else.
+
+### Receive an encrypted message or file {#receive}
+
+:::callout
+**Step 1.** Open [Decrypt › Message](https://apps.onlykey.io/app/decrypt) or [Decrypt › File](https://apps.onlykey.io/app/decrypt-file).
+:::
+
+:::callout
+**Step 2.** Enter the sender's Keybase username or Protonmail address to verify the signature, or choose **Decrypt Only**. Under **Key slot**, leave **Auto** or pick the slot that holds your key.
+:::
+
+:::callout
+**Step 3.** Paste the message or choose the file (usually ending in `.gpg`), select **Decrypt and Verify**, and confirm on the OnlyKey.
+:::
+
+A decrypted file downloads automatically.
+
+The web app reads messages encrypted with OCB, messages to NIST-curve ECC keys, and keys made by GnuPG 2.4 and 2.5.
 
 :::tip "💡 Pro Tip"
-You can receive encrypted messages and files from anyone, no technical skills are required!<br><br>
-Receiving encrypted files is as easy as putting a custom link in your email signature:<br><br>
-**Bob Smith**<br>
-**Email:** Bobsmith@bobsmith.com<br>
-**Phone:** 111.222.3333<br>
-*Send me a secure [message](https://apps.crp.to/app/encrypt?type=e&recipients=bobsmith2) or [file](https://apps.crp.to/app/encrypt-file?type=e&recipients=bobsmith2)*<br>
+You can let anyone send you encrypted messages by putting a link in your email signature:
 
-*[More info](https://onlykey.io/pages/webcrypt)*<br>
-<br>
-- Link the text **'message'** to: https://apps.crp.to/app/encrypt?type=e&recipients=<mark>bobsmith2</mark>
-<br><br>
-- Link the text **'file'** to: https://apps.crp.to/app/encrypt-file?type=e&recipients=<mark>bobsmith2</mark>
-<br><br>
-- Change <mark>bobsmith2</mark> in the link to your Keybase user name
-<br><br>
-- Add a **'More info'** link to: https://onlykey.io/pages/webcrypt<br>
-This link provides information to let your sender know what WebCrypt is, why it's secure, and includes a quick 30 second video that will shows how to use it.
+*Send me a secure [message](https://apps.onlykey.io/app/encrypt?type=e&recipients=bobsmith2) or [file](https://apps.onlykey.io/app/encrypt-file?type=e&recipients=bobsmith2)*
 
-::: embed https://vimeo.com/374672956
-
+Replace `bobsmith2` with your Keybase username. The page can also make the link for you: **Get and Copy Share Link**.
 :::
 
-### See WebCrypt in action {#openpgp-action}
+## Post-quantum PGP {#pqc-pgp}
 
-After configuring your OnlyKey following [these instructions](/importpgp#generating-keys) you can browse to the [Webcrypt app](https://apps.crp.to/encrypt) to send secure messages/files.
+The **PQC-PGP** pages use composite post-quantum OpenPGP keys (ML-DSA-65 + Ed25519 signing, ML-KEM-768 + X25519 encryption). The private key must already be loaded on your OnlyKey with `onlykey-cli loadpqc`; the browser never writes private keys. The web app does not create composite keys either: the Decrypt page still mentions a key generator on the Encrypt page, but there is none. To create a key, see [Create the key](/pqc#create-composite).
 
-:::tip "💡 Pro Tip"
-Watch a video [here](https://vimeo.com/374653109) that demonstrates using OnlyKey WebCrypt for file encryption
+- **Encrypt:** paste the recipient's armored composite public key and your message. Encrypting needs only their public key.
+- **Sign:** choose the PQC slot (1-4) that holds your key and confirm on the OnlyKey.
+- **Decrypt:** paste your public key and the encrypted message, choose your PQC slot, and confirm on the OnlyKey.
+- **Verify:** paste the signer's public key and the signed message. This runs in the browser only.
 
-::: embed https://vimeo.com/374653109
+## age {#age}
 
+The **AGE** pages encrypt and decrypt with a post-quantum X-Wing key that the OnlyKey derives from a label you choose. Nothing is stored on the OnlyKey, and the same label gives the same key here and in [age-plugin-onlykey](/age).
+
+:::callout
+**Step 1.** Open [Encrypt › AGE](https://apps.onlykey.io/app/age-encrypt) and enter a label, such as your email address. The page shows the identity line and the `age1pq1…` recipient for that label.
 :::
 
-#### Step-by-step sending your first message
-
-To create encrypted PGP message or file just:
-- Browse to [https://apps.crp.to/encrypt](https://apps.crp.to/encrypt)
-- Enter the recipient's Keybase username or Protonmail email in the first box
-- Enter your Keybase username or Protonmail email (for the key you loaded onto OnlyKey) in the second box.
-
-:::tip "💡 Pro Tip"
-If you didn't load your key onto OnlyKey follow these [these instructions](/importpgp#generating-keys)
+:::callout
+**Step 2.** Type your text and select **Encrypt**. The page writes an ASCII-armored age file.
 :::
 
-- Enter your secure message in the third box
-- Click "Encrypt and Sign"
-- When prompted enter the challenge code onto the OnlyKey
-
-The encrypted message will be displayed and you can paste it into an email, IM, app or pretty much anything.
-
-*Alternatively, if you don't want to use Keybase or Protonmail you can paste a public key*
-
-#### Step-by-step receiving encrypted files
-
-To decrypt an OpenPGP encrypted file just:
-- Browse to [https://apps.crp.to/decrypt-file](https://apps.crp.to/decrypt-file)
-- If you know the Keybase username/Protonmail email of the sender enter this in the first box, if you don't know this click the "Decrypt Only" radio button.
-- Choose encrypted file (should end in .gpg file extension)
-- Click Decrypt
-- When prompted enter the challenge code onto the OnlyKey
-
-The decrypted zip file will be automatically downloaded.
-
-:::note
-Messages and files encrypted via Webcrypt do not send your data over the internet. The way it works is the necessary files are downloaded to your browser and all processing is done in your browser. Read more about [Webcrypt security here](/webcrypt#security-goals)
+:::callout
+**Step 3.** To read it, open [Decrypt › AGE](https://apps.onlykey.io/app/age-decrypt), enter the same label, paste the age file, select **Decrypt** and confirm on the OnlyKey.
 :::
+
+The files open with age, rage and typage, and files they write open here. Give the `age1pq1…` recipient to anyone who wants to send you files: age 1.3 and typage encrypt to it with no plugin. See [age with OnlyKey](/age) for the command line.
+
+## Password Vault {#vault}
+
+The [Password Vault](/vault) keeps secrets in your browser, each encrypted to its own derived post-quantum key on the OnlyKey.
+
+## Confirming on the OnlyKey {#confirm}
+
+Operations that use a key ask you to confirm on the OnlyKey: tap any button, or if your OnlyKey is set to challenge-code mode, press the three buttons the page shows, in order. Stored PGP keys follow the **Stored keys** setting and the age pages and Vault follow **Web and agent derived keys**. See [User input modes](/user-input-modes).
+
+If the OnlyKey refuses an operation or the time runs out, the page shows the OnlyKey's own message.
+
+## What the web app may use {#webcrypt-access}
+
+**Webcrypt Access** (firmware 3.1.0) controls what the web app may do with your OnlyKey:
+
+- **Stored and derived keys** (default): PGP with stored keys, PQC-PGP, age and the Vault.
+- **Derived keys only:** age and the Vault. Stored PGP keys are out of the web app's reach.
+- **Off:** the web app cannot reach the OnlyKey at all.
+
+If stored-key use is not allowed, the PGP pages say so and show how to enable it. To change the setting, see [Webcrypt Access](/user-input-modes#webcrypt-access).
 
 ## Benefits
 
@@ -149,21 +160,19 @@ OpenPGP is widely used but not known for being easy to use. There have been effo
 
 ## Security Goals {#security-goals}
 
-**Make PGP easier**: Traditional PGP makes journalists angry, we think you shouldn't have to be technologically savvy to use PGP or worry that a software vulnerability could compromise your PGP keys, so we built WebCrypt.
+**Make encryption easy**: you shouldn't have to be technologically savvy to use PGP or age, or worry that malware on your computer could expose your private keys.
 
-**Empower the people**: Give people the ability to securely send and receive messages using any computer or Android/iOS device with no complicated software/drivers required and no worrying about compromise of user's private identity.
+**Keys stay on the OnlyKey**: private keys are never sent to the browser. The page sends the OnlyKey what it needs to sign or decrypt, and the OnlyKey returns only the result after you confirm.
 
-**Serverless**: All encryption/decryption done via javascript in users own browser locally (no server to hack).
+**Serverless**: all encryption and decryption runs in your own browser. Your messages, files and Vault entries are never sent to a server.
 
-**Private**: No logins required. No data retention. No tracking!!! No emails. No ads. No demographics. Retain no metadata, or other tracking information.
+**Private**: no logins, no data retention, no tracking, no ads.
 
-**Strong crypto** - Everything is sent via HTTPS to/from the web application. Data between local browser and OnlyKey is encrypted using AES/ECDH shared secret (NaCl + AES-256-GCM). This means on the local computer data is end-to-end encrypted and even if a malicious applications were to intercept communication it would be encrypted and unreadable without the key.
+**Encrypted connection to the OnlyKey**: every message between the page and the OnlyKey is encrypted and authenticated. See [transit v2](#transit-v2).
 
-**Phishing prevention** - The OnlyKey currently only works with apps.crp.to. Other domains are ignored, domains are enforced by origin.
+**Phishing prevention**: the OnlyKey answers the WebCrypt extension only on apps.onlykey.io and apps.crp.to. The list is built into the firmware, so other websites cannot use it.
 
-**Open source & audit-able** - What you see is what you get this repository is available on Github.
-
-We are always working to make WebCrypt better, pull requests welcome!
+**Open source and auditable**: the source is on [GitHub](https://github.com/trustcrypto/apps.onlykey.io).
 
 ## Societal Impact Goals {#society-goals}
 
@@ -176,80 +185,27 @@ Many journalists may travel and may have to make do with whatever internet conne
 ### Ease of Use
 It is often the case that secure solutions are not adopted not because of lack of availability but that they require considerable technical skills. For example, installing smart card software may require command line utilities and a high level of technical proficiency. At-risk communities may not have the technical proficiency to do this, with OnlyKey there are no commands necessary, setup is as easy as following step by step directions to generate a private key on Keybase and load onto the OnlyKey. This opens up the solution to a much wider range of at-risk communities.
 
-### Plausible Deniability
-Human rights activists and journalists may reside in or travel to countries with encryption bans or mandatory key disclosure. OnlyKey already has a feature for this to provide plausible deniability. Full details of this feature are available [here](/pdguide).
+### Post-quantum protection
+Messages and files that need to stay private for years can be encrypted with [post-quantum keys](/pqc), designed to resist future quantum computers, using the age and PQC-PGP pages.
 
-## Technical Specs
+## Technical Specs {#technical-specs}
 
-The protocol outlined below utilizes existing communication channel via FIDO2. Currently, FIDO2 does not provide end-to-end encryption between the web and security keys. Meaning that USB data is not encrypted and any application with USB read access is able to view FIDO2 data in transit. For our application, a custom extra layer of data in transit encryption was built to ensure that even if there is a local application with access to read USB data the data would be encrypted and unreadable. Only the security key (OnlyKey) and the initiating web application are able to read the encrypted data in our implementation.
+### Communication channel {#communication-channel}
 
-### Communication Channel Overview (Advanced)
+The web app talks to the OnlyKey through the FIDO2 (WebAuthn) API that browsers already provide. Requests are carried inside FIDO2 authentication requests and replies inside FIDO2 responses, through an OnlyKey extension that the firmware answers only for apps.onlykey.io and apps.crp.to. Ordinary FIDO2 sign-in to websites is separate and is not affected.
 
-FIDO2 utilizes registration and authentication message types. To send data to the OnlyKey, messages are encoded in the Key Handle of the authentication message type. To receive data back, messages are encoded in the signature of the authentication response. This method provides a reliable form of communication that is supported anywhere FIDO2 / U2F is supported including Firefox, Chrome, Chromium, Opera, Brave, and Edge (new).
+FIDO2 itself does not encrypt data between the browser and a security key, so any program that can read USB traffic could read it. WebCrypt adds its own encryption on top.
 
-The outline below visualizes the use of FIDO2 to communicate via browser to OnlyKey over USB.
+### Transit encryption v2 {#transit-v2}
 
-```
-┌──────────────┐                                                   ┌─────────┐
-│ APPLICATION  │                                                   │ OnlyKey │
-└──────────────┘                                                   └─────────┘
+With firmware 3.1.0 and web app 4.0, every message between the page and the OnlyKey is encrypted and authenticated:
 
-INITIALIZE - SET TIME, SET APP PUBLIC NaCl KEY, GET ONLYKEY PUBLIC NaCl KEY, GET FIRMWARE VERSION
+1. **Connect.** The page and the OnlyKey each make a new X25519 key pair for the session and exchange public keys. The OnlyKey also reports its firmware version and sets its clock.
+2. **Session key.** Both sides compute the X25519 shared secret and hash it with SHA-256 to get a 256-bit AES key. The private halves are discarded.
+3. **Every message** is encrypted with AES-256-GCM under the session key. The IV is built from the message direction and a message counter, each frame carries its counter, and the 16-byte authentication tag is checked before anything is used.
+4. **Replays are refused.** A frame whose counter goes backwards, or whose tag does not verify, is discarded.
 
-1. Authentication Request Message:
-
-Encode a *packet in key handle field that contains current epoch time and application public key.
-┌──────────────────┬──────────────────┐
-│    challenge     │    Key Handle    │  
-│      random      │     *packet      │  
-└──────────────────┴──────────────────┘
-───────────────────────────────────────────────────────────────────────────▶
-
-2. Authentication Response Message:
-
-Decode a *packet with OnlyKey public key, OnlyKey firmware version.
-┌──────────────────┐
-│     Signature    │  
-│     *packet      │  
-└──────────────────┘
-◀───────────────────────────────────────────────────────────────────────────
-
-DECRYPTION/SIGNING REQUEST - DECRYPT OR SIGN DATA USING RSA PRIVATE KEY
-
-1. Authentication Request Message:
-
-First, generate ECDH shared secret from OnlyKey's provided public key and application
-generated public key. AES-GCM key is derived from SHA256 hash of shared secret (32 bytes). Encrypt and decrypt
-all future packets with this key.
-
-Encode encrypted *packet in key handle field one chunk at a time (Max size 255 bytes).
-Repeat for each chunk of data. Once finished sending data ping messages sent in
-order to get response or error messages.
-┌──────────────────┬──────────────────┐
-│    challenge     │    Key Handle    │  
-│      random      │     *packet      │  
-└──────────────────┴──────────────────┘
-───────────────────────────────────────────────────────────────────────────▶
-
-2.  Authentication Response Message:
-
-Once full message is received both the App and the OnlyKey generate a hash of
-the message that is used to generate a 3 digit challenge code. The OnlyKey light flashes continuously
-and the app prompts the user to enter the 3 digit code to authorize the signing / decrypting of
-that message. This ensures that user presence is required to sign / decrypt and that the authorization
-applies to a specific plaintext, not a spoofed message. For increased security future versions may permit
-a longer challenge code.
-
-Once the challenge code is entered correctly, the decryption / signing is completed and the result is encrypted via AES-GCM and stored on the OnlyKey (After 25 seconds unretrieved messages are automatically wiped from OnlyKey).
-
-┌────────────────────────┐
-│        Signature       │  
-│        *packet         │  
-│     (Variable Size)    │
-└────────────────────────┘
-◀───────────────────────────────────────────────────────────────────────────
-
-```
+Older firmware used an earlier version of this channel, which the web app at apps.crp.to still speaks.
 
 ## Licenses
 
@@ -285,20 +241,24 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 This distribution includes cryptographic software. The country in which you currently reside may have restrictions on the import, possession, use, and/or re-export to another country, of encryption software.
 BEFORE using any encryption software, please check your country's laws, regulations and policies concerning the import, possession, or use, and re-export of encryption software, to see if this is permitted.
-See <http://www.wassenaar.org/> for more information.
+See <https://www.wassenaar.org/> for more information.
 
 The U.S. Government Department of Commerce, Bureau of Industry and Security (BIS), has classified this software as Export Commodity Control Number (ECCN) 5D002.C.1, which includes information security software using or performing cryptographic functions with asymmetric algorithms.
 The form and manner of this distribution makes it eligible for export under the License Exception ENC Technology Software Unrestricted (TSU) exception (see the BIS Export Administration Regulations, Section 740.13) for both object code and source code.
 
 The following cryptographic software is included in this distribution:
 
+   "OpenPGP.js" - https://github.com/openpgpjs/openpgpjs
+   "noble-post-quantum" - https://github.com/paulmillr/noble-post-quantum
+   "noble-curves" - https://github.com/paulmillr/noble-curves
+   "noble-hashes" - https://github.com/paulmillr/noble-hashes
    "RFC4880 Implementation in IcedCoffeeScript" - https://github.com/keybase/kbpgp
    "Port of TweetNaCl cryptographic library to JavaScript" - https://github.com/dchest/tweetnacl-js
    "A native implementation of TLS in Javascript and tools to write crypto-based and network-heavy webapps" - https://github.com/digitalbazaar/forge
 
-For more information on export restrictions see: http://www.apache.org/licenses/exports/
+For more information on export restrictions see: https://www.apache.org/licenses/exports/
 
 ## Source
 
-[OnlyKey WebCrypt on Github](https://github.com/onlykey/onlykey.github.io)
-
+- [Web app 4.0 (apps.onlykey.io) on GitHub](https://github.com/trustcrypto/apps.onlykey.io)
+- [Web app for firmware 3.0.4 and older (apps.crp.to) on GitHub](https://github.com/onlykey/onlykey.github.io)

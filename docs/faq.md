@@ -2,7 +2,7 @@
 title: OnlyKey FAQ
 description: Frequently Asked Questions
 slug: faq
-last_updated: Oct, 18 2020
+last_updated: Nov, 25, 2026
 keywords: frequently asked questions, FAQ, question and answer
 ---
 
@@ -81,7 +81,25 @@ There are a variety of hardware and software tokens out there. Some support FIDO
 
 ## What specifically are the differences between the Standard Edition firmware and the International Travel Edition firmware?
 
+The International Travel Edition was removed in firmware 3.1.0; there is now one firmware edition, used by both OnlyKey and OnlyKey DUO. The answer below describes the edition for OnlyKeys that still run it.
+
 The International Travel Edition firmware is essentially a feature limited version of the OnlyKey. It is a fully functional password manager but does not utilize encryption and may be usable in countries where encryption is banned/restricted. More information [here](/ite).
+
+## What post-quantum support does OnlyKey have?
+
+With firmware 3.1.0, OnlyKey can hold post-quantum keys: ML-KEM-768 and X-Wing keys, which it can generate itself, and up to four composite post-quantum OpenPGP keys (ML-DSA-65 + Ed25519 signing, ML-KEM-768 + X25519 encryption). You can use them to encrypt files with [age](/age), in the [web app](/webcrypt#pqc-pgp), and in the [Password Vault](/vault). See [Post-Quantum Keys](/pqc).
+
+## Which web app should I use?
+
+For firmware 3.1.0 use [apps.onlykey.io](https://apps.onlykey.io). For firmware 3.0.4 or older use [apps.crp.to](https://apps.crp.to). See [Which site to use](/webcrypt#which-site).
+
+## Does upgrading to firmware 3.1.0 change my SSH or GPG keys?
+
+No. onlykey-agent keeps using the same derivation by default, so your existing SSH and GPG keys stay the same. A new derivation (`derived-v2`) is used only if you ask for it. See [Derivation v2](/onlykey-agent#derived-v2).
+
+## What do I need to run onlykey-cli and onlykey-agent?
+
+Python 3.10 or newer for python-onlykey 1.3.1 and onlykey-agent 1.1.17. See [Version Compatibility](/compatibility).
 
 ## What does entering the self destruct PIN do?
 
